@@ -2,49 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PurpleTime 3D Goo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PurpleTime: Goop Mode</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="container"></div>
+  <div class="goop"></div>
 
-  <!-- Three.js Library -->
-  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
-  <!-- Vertex Shader -->
-  <script id="vertexShader" type="x-shader/x-vertex">
-    attribute vec3 position;
-    void main() {
-      gl_Position = vec4(position, 1.0);
-    }
-  </script>
-  <!-- Fragment Shader -->
-  <script id="fragmentShader" type="x-shader/x-fragment">
-    precision highp float;
+  <div class="ui">
+    <h1>PurpleTime</h1>
+    <ul>
+      <li>💾 Memory</li>
+      <li>🎵 Music</li>
+      <li>🕸️ WebZone</li>
+      <li>⚙️ Settings</li>
+    </ul>
+  </div>
 
-    uniform vec2 u_resolution;
-    uniform float u_time;
-    uniform vec2 u_mouse;
-
-    // Simplex Noise Function (or any noise function you prefer)
-    float noise(vec2 p) {
-      return sin(p.x) * sin(p.y);
-    }
-
-    void main() {
-      vec2 uv = gl_FragCoord.xy / u_resolution.xy;
-      vec2 pos = uv * 10.0;
-
-      float n = noise(pos + u_time);
-
-      float r = 0.5 + 0.5 * sin(u_time + n * 2.0);
-      float g = 0.2 + 0.2 * sin(u_time + n * 3.0);
-      float b = 0.7 + 0.3 * sin(u_time + n * 4.0);
-
-      gl_FragColor = vec4(r, g, b, 1.0);
-    }
-  </script>
-  <!-- Main Script -->
-  <script src="script.js"></script>
+  <svg>
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+      <feColorMatrix in="blur" type="matrix"
+        values="1 0 0 0 0  
+                0 1 0 0 0  
+                0 0 1 0 0  
+                0 0 0 18 -7" result="goo" />
+      <feBlend in="SourceGraphic" in2="goo" />
+    </filter>
+  </svg>
 </body>
 </html>
