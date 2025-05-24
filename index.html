@@ -2,39 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Retro Desktop</title>
+  <title>Paul's Place</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="desktop">
-    <div class="icon" onclick="openWindow('GAMES')">
-      <div class="folder"></div>
-      <span>GAMES</span>
-    </div>
-    <div class="icon" onclick="openWindow('IMAGES')">
-      <div class="folder"></div>
-      <span>IMAGES</span>
-    </div>
-    <div class="icon" onclick="openWindow('NONAME')">
-      <div class="folder"></div>
-      <span>NONAME</span>
-    </div>
-    <div class="icon trash">
-      <div class="trashbin"></div>
-      <span>TRASH</span>
-    </div>
-  </div>
+  <div class="taskbar">
+  <button class="taskbar-btn">
+    <img src="assets/images/files.png" alt="Files">
+    Files
+  </button>
+  <button class="taskbar-btn">
+    <img src="assets/images/terminal.png" alt="Terminal">
+    Terminal
+  </button>
+  <button class="taskbar-btn">
+    <img src="assets/images/web.png" alt="Web">
+    Web
+  </button>
+  <button class="taskbar-btn">
+    <img src="assets/images/settings.png" alt="Settings">
+    Settings
+  </button>
+</div>
 
-  <div id="window" class="window hidden">
-    <div class="title-bar">
-      <span id="window-title"></span>
-      <button onclick="closeWindow()">X</button>
-    </div>
-    <div class="window-content">
-      <p>This is a placeholder for the folder.</p>
-    </div>
-  </div>
 
-  <script src="script.js"></script>
+  <div class="content">
+    <h1>Welcome to Paul's Place</h1>
+    <p>This is still under construction!</p>
+  </div>
 </body>
 </html>
