@@ -1,9 +1,9 @@
 body, html {
   margin: 0;
   padding: 0;
-  font-family: monospace;
   background: black;
-  color: #e0b3ff;
+  font-family: monospace;
+  color: #fff;
   overflow-x: hidden;
 }
 
@@ -17,39 +17,38 @@ canvas#goop-canvas {
 }
 
 .content {
-  padding: 4rem 2rem;
   position: relative;
   z-index: 1;
+  padding: 4rem 2rem;
   text-align: center;
 }
 
 h1 {
   font-size: 3rem;
-  color: #d9b3ff;
+  color: #e0b3ff;
   text-shadow: 0 0 10px #a600ff;
+  margin-bottom: 3rem;
 }
 
-.button-group {
-  margin-top: 2rem;
+.button-row {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 button {
-  background: #350046;
-  border: 2px solid #b94cff;
-  color: #f5d6ff;
-  padding: 1rem 2rem;
   font-size: 1.2rem;
-  border-radius: 12px;
+  padding: 1rem 2rem;
+  background: #8c00ff;
+  border: none;
+  color: white;
+  border-radius: 1rem;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
-  text-transform: uppercase;
+  box-shadow: 0 0 15px #b84dff;
+  transition: background 0.3s;
 }
 
 button:hover {
-  background: #50006e;
-  transform: scale(1.05);
+  background: #a200ff;
 }
