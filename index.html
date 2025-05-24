@@ -3,26 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Welcome to PurpleTime</title>
+  <title>PurpleTime 3D Goo</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>💿 PurpleTime 💿</h1>
-      <p>A funky vintage corner of the web</p>
-    </header>
+  <div id="container"></div>
 
-    <main>
-      <button id="surpriseBtn">Click for a Purple Surprise!</button>
-      <div id="surpriseMessage"></div>
-    </main>
+  <!-- Three.js Library -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+  <!-- Vertex Shader -->
+  <script id="vertexShader" type="x-shader/x-vertex">
+    attribute vec3 position;
+    void main() {
+      gl_Position = vec4(position, 1.0);
+    }
+  </script>
+  <!-- Fragment Shader -->
+  <script id="fragmentShader" type="x-shader/x-fragment">
+    precision highp float;
 
-    <footer>
-      <p>&copy; 199X PurpleTime. All pixels reserved.</p>
-    </footer>
-  </div>
+    uniform vec2 u_resolution;
+    uniform float u_time;
+    uniform vec2 u_mouse;
 
+    // Simplex Noise Function (or any noise function you prefer)
+    float noise(vec2 p) {
+      return sin(p.x) * sin(p.y);
+    }
+
+    void main() {
+      vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+      vec2 pos = uv * 10.0;
+
+      float n = noise(pos + u_time);
+
+      float r = 0.5 + 0.5 * sin(u_time + n * 2.0);
+      float g = 0.2 + 0.2 * sin(u_time + n * 3.0);
+      float b = 0.7 + 0.3 * sin(u_time + n * 4.0);
+
+      gl_FragColor = vec4(r, g, b, 1.0);
+    }
+  </script>
+  <!-- Main Script -->
   <script src="script.js"></script>
 </body>
 </html>
