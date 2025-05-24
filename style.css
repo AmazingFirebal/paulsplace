@@ -1,12 +1,72 @@
+/* Body reset */
 body, html {
   margin: 0;
   padding: 0;
-  overflow: hidden;
   height: 100%;
-  background-color: #000;
+  overflow: hidden;
+  background: black;
+  font-family: monospace;
+  color: #e0b3ff;
 }
 
-#container {
+/* Goo background */
+.goop {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  background:
+    radial-gradient(circle at 20% 30%, #5d00a0, transparent 40%),
+    radial-gradient(circle at 70% 60%, #b300ff, transparent 30%),
+    radial-gradient(circle at 50% 50%, #8000ff, transparent 50%);
+  animation: goopMove 15s infinite ease-in-out;
+  filter: url(#goo);
+  z-index: 0;
+}
+
+/* UI Layer */
+.ui {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-top: 10vh;
+}
+
+.ui h1 {
+  font-size: 3rem;
+  color: #e6ccff;
+  text-shadow: 0 0 20px #b300ff;
+}
+
+.ui ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.5rem;
+}
+
+.ui li {
+  margin: 1em 0;
+  color: #caa0ff;
+  text-shadow: 0 0 10px #b300ff;
+  cursor: pointer;
+}
+
+.ui li:hover {
+  color: #fff;
+  text-shadow: 0 0 20px #ff00ff;
+  transform: scale(1.1);
+}
+
+/* Goo movement */
+@keyframes goopMove {
+  0% {
+    background-position: 20% 30%, 70% 60%, 50% 50%;
+  }
+  50% {
+    background-position: 30% 40%, 60% 70%, 45% 55%;
+  }
+  100% {
+    background-position: 20% 30%, 70% 60%, 50% 50%;
+  }
 }
