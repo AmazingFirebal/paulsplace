@@ -1,72 +1,42 @@
-/* Body reset */
 body, html {
   margin: 0;
   padding: 0;
-  height: 100%;
-  overflow: hidden;
-  background: black;
   font-family: monospace;
+  background: black;
   color: #e0b3ff;
+  overflow-x: hidden;
 }
 
-/* Goo background */
-.goop {
-  position: absolute;
+canvas#goop-canvas {
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background:
-    radial-gradient(circle at 20% 30%, #5d00a0, transparent 40%),
-    radial-gradient(circle at 70% 60%, #b300ff, transparent 30%),
-    radial-gradient(circle at 50% 50%, #8000ff, transparent 50%);
-  animation: goopMove 15s infinite ease-in-out;
-  filter: url(#goo);
-  z-index: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
 }
 
-/* UI Layer */
-.ui {
+.content {
+  padding: 5rem 2rem;
   position: relative;
   z-index: 1;
-  text-align: center;
-  margin-top: 10vh;
 }
 
-.ui h1 {
+h1 {
   font-size: 3rem;
-  color: #e6ccff;
-  text-shadow: 0 0 20px #b300ff;
+  color: #d9b3ff;
+  text-shadow: 0 0 10px #a600ff;
 }
 
-.ui ul {
-  list-style: none;
-  padding: 0;
-  font-size: 1.5rem;
-}
-
-.ui li {
-  margin: 1em 0;
-  color: #caa0ff;
-  text-shadow: 0 0 10px #b300ff;
-  cursor: pointer;
-}
-
-.ui li:hover {
+h2 {
+  font-size: 2rem;
+  margin-top: 4rem;
   color: #fff;
-  text-shadow: 0 0 20px #ff00ff;
-  transform: scale(1.1);
+  text-shadow: 0 0 8px #c94dff;
 }
 
-/* Goo movement */
-@keyframes goopMove {
-  0% {
-    background-position: 20% 30%, 70% 60%, 50% 50%;
-  }
-  50% {
-    background-position: 30% 40%, 60% 70%, 45% 55%;
-  }
-  100% {
-    background-position: 20% 30%, 70% 60%, 50% 50%;
-  }
+p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  line-height: 1.5;
 }
