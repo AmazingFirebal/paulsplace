@@ -9,15 +9,13 @@ body {
   background-color: #0b0014;
   color: #c9a0ff;
   display: flex;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
 }
 
 .taskbar {
   width: 64px;
   background-color: #1a001f;
   border-right: 2px solid #42006c;
-  display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
@@ -58,8 +56,8 @@ body {
 }
 
 .content {
-  padding: 45px;
-  flex: 1;
+  margin-left: 280px;
+  padding: 280px;
   background: repeating-linear-gradient(
     0deg,
     #0b0014,
@@ -67,6 +65,7 @@ body {
     #0c0018 2px,
     #0c0018 4px
   );
+  
 }
 .file-section {
   margin-bottom: 40px;
@@ -94,4 +93,47 @@ body {
 
 .file-section a:hover {
   color: #ffffff;
+}
+details {
+  background-color: #1e0033;
+  border: 1px solid #4b0082;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: #ffccff;
+  outline: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  padding: 5px 0;
+}
+
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::before {
+  content: "▶";
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+details[open] summary::before {
+  content: "▼";
+}
+ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.file-section ul {
+  list-style-type: square;
 }
