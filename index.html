@@ -2,20 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Paul's Place</title>
+  <title>Retro Desktop</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <canvas id="goop-canvas"></canvas>
-  <div class="content">
-    <h1>Paul's Place</h1>
-    <div class="buttons">
-      <button>Home</button>
-      <button>About</button>
-      <button>Projects</button>
-      <button>Contact</button>
+  <div id="desktop">
+    <div class="icon" onclick="openWindow('GAMES')">
+      <div class="folder"></div>
+      <span>GAMES</span>
+    </div>
+    <div class="icon" onclick="openWindow('IMAGES')">
+      <div class="folder"></div>
+      <span>IMAGES</span>
+    </div>
+    <div class="icon" onclick="openWindow('NONAME')">
+      <div class="folder"></div>
+      <span>NONAME</span>
+    </div>
+    <div class="icon trash">
+      <div class="trashbin"></div>
+      <span>TRASH</span>
     </div>
   </div>
+
+  <div id="window" class="window hidden">
+    <div class="title-bar">
+      <span id="window-title"></span>
+      <button onclick="closeWindow()">X</button>
+    </div>
+    <div class="window-content">
+      <p>This is a placeholder for the folder.</p>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
