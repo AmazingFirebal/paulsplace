@@ -18,42 +18,22 @@ let balls = Array.from({ length: 6 }, () => ({
 
 function drawMetaballs() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = '#b300ff';
 
-  ctx.beginPath();
-
-  for (let i = 0; i < balls.length; i++) {
-    let b1 = balls[i];
-    for (let j = i + 1; j < balls.length; j++) {
-      let b2 = balls[j];
-      let dx = b2.x - b1.x;
-      let dy = b2.y - b1.y;
-      let dist = Math.sqrt(dx * dx + dy * dy);
-      let maxDist = (b1.r + b2.r) * 0.75;
-
-      if (dist < maxDist) {
-        let angle = Math.atan2(dy, dx);
-        let cp1x = b1.x + Math.cos(angle) * b1.r;
-        let cp1y = b1.y + Math.sin(angle) * b1.r;
-        let cp2x = b2.x - Math.cos(angle) * b2.r;
-        let cp2y = b2.y - Math.sin(angle) * b2.r;
-
-        ctx.moveTo(cp1x, cp1y);
-        ctx.bezierCurveTo(
-          b1.x, b1.y,
-          b2.x, b2.y,
-          cp2x, cp2y
-        );
-      }
-    }
-  }
+  // Composite mode to simulate blob merging
+  ctx.globalCompositeOperation = 'lighter';
 
   balls.forEach(ball => {
-    ctx.moveTo(ball.x + ball.r, ball.y);
+    const gradient = ctx.createRadialGradient(ball.x, ball.y, ball.r * 0.4, ball.x, ball.y, ball.r);
+    gradient.addColorStop(0, 'rgba(179, 0, 255, 0.6)');
+    gradient.addColorStop(1, 'rgba(179, 0, 255, 0)');
+
+    ctx.fillStyle = gradient;
+    ctx.beginPath();
     ctx.arc(ball.x, ball.y, ball.r, 0, Math.PI * 2);
+    ctx.fill();
   });
 
-  ctx.fill();
+  ctx.globalCompositeOperation = 'source-over';
 }
 
 function animate() {
