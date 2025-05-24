@@ -1,12 +1,12 @@
-document.getElementById("surpriseBtn").addEventListener("click", function () {
+document.getElementById("surpriseBtn").addEventListener("click", () => {
   const messages = [
-    "You found the purple vibe! 🎵",
-    "Groovy times ahead! 🌈",
-    "Keep it funky, web wanderer! 🕺",
-    "Retro never dies! 💿",
-    "💜 You just made the internet 37% cooler 💜"
+    "✨ Purple dreams never fade.",
+    "🎸 You're jamming with the best of '99!",
+    "🌀 You've unlocked a secret groove.",
+    "💿 Welcome to the purple dimension!",
+    "💜 Vibes fully activated."
   ];
 
-  const randomIndex = Math.floor(Math.random() * messages.length);
-  document.getElementById("surpriseMessage").textContent = messages[randomIndex];
+  const random = Math.floor(Math.random() * messages.length);
+  document.getElementById("surpriseMessage").textContent = messages[random];
 });
