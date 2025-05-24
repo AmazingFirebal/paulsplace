@@ -1,3 +1,17 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  background-color: #000;
+}
+
+#container {
+  width: 100%;
+  height: 100%;
+}
+
+
 /* Black & Purple Vintage Theme */
 body {
   margin: 0;
