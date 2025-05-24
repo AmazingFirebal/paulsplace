@@ -1,54 +1,63 @@
-* {
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body, html {
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  background: black;
-  font-family: 'Courier New', monospace;
+  background: #c8d4a1;
+  font-family: monospace;
+  cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAPCAYAAADJViUEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAKUlEQVQoz2NgoBAwUqifgYGB4T8R8X8ihT8hLMQMYgkAiGGAGAF2kR6VbIvRZwAAAABJRU5ErkJggg=='), auto;
 }
 
-#goop-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-.content {
-  position: relative;
-  z-index: 1;
-  padding: 100px 20px;
-  text-align: center;
-  color: white;
-}
-
-h1 {
-  font-size: 3rem;
-  margin-bottom: 40px;
-}
-
-.buttons {
+#desktop {
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  align-items: center;
+  justify-content: space-around;
+  background: #2e2f2c;
 }
 
-button {
-  background: rgba(179, 0, 255, 0.8);
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  border-radius: 12px;
-  font-size: 1.2rem;
+.icon {
+  width: 80px;
+  text-align: center;
+  color: #e7e187;
+  margin: 20px;
   cursor: pointer;
-  transition: background 0.3s;
 }
 
-button:hover {
-  background: rgba(255, 0, 255, 1);
+.folder, .trashbin {
+  width: 48px;
+  height: 32px;
+  background: #e7e187;
+  margin: 0 auto 5px;
+}
+
+.trashbin {
+  background: #aaa;
+  border: 2px solid #333;
+}
+
+.window {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 300px;
+  background: #eee;
+  border: 2px solid #333;
+  box-shadow: 4px 4px #000;
+}
+
+.title-bar {
+  background: #444;
+  color: #fff;
+  padding: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.window-content {
+  padding: 10px;
+  background: #ddd;
+}
+
+.hidden {
+  display: none;
 }
