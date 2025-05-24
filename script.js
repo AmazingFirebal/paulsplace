@@ -1,61 +1,46 @@
-// Get container
-const container = document.getElementById('container');
+const canvas = document.getElementById('goop-canvas');
+const ctx = canvas.getContext('2d');
 
-// Create renderer
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
-container.appendChild(renderer.domElement);
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
 
-// Create scene
-const scene = new THREE.Scene();
+let blobs = Array.from({ length: 6 }, () => ({
+  x: Math.random() * canvas.width,
+  y: Math.random() * canvas.height,
+  r: 80 + Math.random() * 50,
+  dx: Math.random() * 2 - 1,
+  dy: Math.random() * 2 - 1,
+}));
 
-// Create camera
-const camera = new THREE.Camera();
-scene.add(camera);
+function drawBlob(blob) {
+  let gradient = ctx.createRadialGradient(blob.x, blob.y, blob.r * 0.5, blob.x, blob.y, blob.r);
+  gradient.addColorStop(0, 'rgba(204,0,255,0.8)');
+  gradient.addColorStop(1, 'rgba(0,0,0,0)');
 
-// Create geometry and material
-const geometry = new THREE.PlaneBufferGeometry(2, 2);
-
-// Get shaders from HTML
-const vertexShader = document.getElementById('vertexShader').textContent;
-const fragmentShader = document.getElementById('fragmentShader').textContent;
-
-// Create uniforms
-const uniforms = {
-  u_time: { type: 'f', value: 0.0 },
-  u_resolution: { type: 'v2', value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
-  u_mouse: { type: 'v2', value: new THREE.Vector2(0.0, 0.0) }
-};
-
-// Create material
-const material = new THREE.ShaderMaterial({
-  uniforms: uniforms,
-  vertexShader: vertexShader,
-  fragmentShader: fragmentShader
-});
-
-// Create mesh and add to scene
-const mesh = new THREE.Mesh(geometry, material);
-scene.add(mesh);
-
-// Handle mouse movement
-document.addEventListener('mousemove', (event) => {
-  uniforms.u_mouse.value.x = event.clientX;
-  uniforms.u_mouse.value.y = window.innerHeight - event.clientY;
-});
-
-// Handle window resize
-window.addEventListener('resize', () => {
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  uniforms.u_resolution.value.x = window.innerWidth;
-  uniforms.u_resolution.value.y = window.innerHeight;
-});
-
-// Animation loop
-function animate() {
-  requestAnimationFrame(animate);
-  uniforms.u_time.value += 0.05;
-  renderer.render(scene, camera);
+  ctx.fillStyle = gradient;
+  ctx.beginPath();
+  ctx.arc(blob.x, blob.y, blob.r, 0, Math.PI * 2);
+  ctx.fill();
 }
 
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  blobs.forEach(blob => {
+    blob.x += blob.dx;
+    blob.y += blob.dy;
+
+    // Bounce
+    if (blob.x < 0 || blob.x > canvas.width) blob.dx *= -1;
+    if (blob.y < 0 || blob.y > canvas.height) blob.dy *= -1;
+
+    drawBlob(blob);
+  });
+
+  requestAnimationFrame(animate);
+}
 animate();
