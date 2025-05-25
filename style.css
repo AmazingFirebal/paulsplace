@@ -42,7 +42,7 @@ body {
   gap: 5px;
   cursor: pointer;
   transition: background 0.2s;
-  font-family: 'Century Gothic', 'Futura', sans-serif; /* ✅ Updated */
+  font-family: 'Century Gothic', 'Futura', sans-serif;
   text-decoration: none;
 }
 
