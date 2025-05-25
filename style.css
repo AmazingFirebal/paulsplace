@@ -216,6 +216,7 @@ details {
   position: fixed;
   bottom: 8px;
   left: 80px; 
+  font-family: 'Century Gothic', sans-serif;
   font-size: 10px;
   color: #ffccff;
   display: flex;
