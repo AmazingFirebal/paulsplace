@@ -5,11 +5,12 @@
 }
 
 body {
+  font-family: 'Press Start 2P', monospace;
   background-color: #0b0014;
   color: #c9a0ff;
   display: flex;
   min-height: 100vh;
-  font-family: 'Century Gothic', 'Futura', sans-serif;
+  
 }
 
 /* Sidebar (taskbar) */
