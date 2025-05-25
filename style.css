@@ -211,3 +211,21 @@ details {
 .web-column a:hover {
   color: #ffffff;
 }
+
+.view-counter {
+  position: fixed;
+  bottom: 8px;
+  left: 80px; /* So it doesn’t overlap the sidebar */
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 10px;
+  color: #ffccff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 999;
+}
+
+.view-counter img {
+  height: 16px;
+  image-rendering: pixelated;
+}
