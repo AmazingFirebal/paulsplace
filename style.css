@@ -169,19 +169,28 @@ details {
   flex-wrap: wrap;
 }
 
+.web-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-left: 64px; /* To clear the taskbar */
+  padding: 40px;
+}
+
 .web-column {
-  flex: 1;
-  min-width: 250px;
   background-color: #1a001f;
   border: 2px solid #42006c;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 250px;
 }
 
-.web-column h2 {
+.section-title {
+  font-family: 'Century Gothic', sans-serif;
   color: #ffccff;
-  margin-bottom: 10px;
-  font-family: 'Century Gothic', 'Futura', sans-serif;
+  font-size: 16px;
+  margin-bottom: 12px;
 }
 
 .web-column ul {
@@ -190,7 +199,7 @@ details {
 }
 
 .web-column li {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .web-column a {
