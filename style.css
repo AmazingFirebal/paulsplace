@@ -12,10 +12,12 @@ body {
   min-height: 100vh;
 }
 
+/* Taskbar styles */
 .taskbar {
   width: 64px;
   background-color: #1a001f;
   border-right: 2px solid #42006c;
+  display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
@@ -34,9 +36,9 @@ body {
   align-items: center;
   gap: 5px;
   cursor: pointer;
-  transition: background 0.2s;
-  font-family: 'century-gothic', monospace !important;
   text-decoration: none;
+  font-family: 'century-gothic', monospace !important;
+  transition: background 0.2s;
 }
 
 .taskbar-btn:hover {
@@ -54,12 +56,10 @@ body {
   transform: scale(1.5);
 }
 
-
-}
-
+/* Content styles */
 .content {
-  margin-left: 280px;
-  padding: 280px;
+  margin-left: 64px;
+  padding: 60px;
   background: repeating-linear-gradient(
     0deg,
     #0b0014,
@@ -67,8 +67,9 @@ body {
     #0c0018 2px,
     #0c0018 4px
   );
-  
 }
+
+/* Optional file-section styles if used elsewhere */
 .file-section {
   margin-bottom: 40px;
 }
@@ -96,6 +97,8 @@ body {
 .file-section a:hover {
   color: #ffffff;
 }
+
+/* Expandable details element */
 details {
   background-color: #1e0033;
   border: 1px solid #4b0082;
@@ -108,7 +111,6 @@ summary {
   cursor: pointer;
   font-weight: bold;
   color: #ffccff;
-  outline: none;
   user-select: none;
   display: flex;
   align-items: center;
@@ -116,7 +118,6 @@ summary {
   font-size: 16px;
   padding: 5px 0;
 }
-
 
 summary::-webkit-details-marker {
   display: none;
@@ -130,12 +131,4 @@ summary::before {
 
 details[open] summary::before {
   content: "▼";
-}
-ul {
-  padding-left: 20px;
-  margin: 0;
-}
-
-.file-section ul {
-  list-style-type: square;
 }
