@@ -29,7 +29,6 @@ body {
   height: 100vh;
 }
 
-/* Buttons inside sidebar */
 .taskbar-btn {
   background: none;
   border: none;
@@ -42,10 +41,11 @@ body {
   align-items: center;
   gap: 5px;
   cursor: pointer;
-  text-decoration: none;
-  font-family: 'century-gothic', monospace !important;
   transition: background 0.2s;
+  font-family: 'Century Gothic', 'Futura', sans-serif; /* ✅ Updated */
+  text-decoration: none;
 }
+
 
 .taskbar-btn:hover {
   background-color: #2b0044;
