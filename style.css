@@ -160,3 +160,45 @@ li {
 details {
   margin-bottom: 30px;
 }
+
+.web-content {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  margin-left: 64px; /* so it doesn't get hidden under the sidebar */
+  flex-wrap: wrap;
+}
+
+.web-column {
+  flex: 1;
+  min-width: 250px;
+  background-color: #1a001f;
+  border: 2px solid #42006c;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.web-column h2 {
+  color: #ffccff;
+  margin-bottom: 10px;
+  font-family: 'Century Gothic', 'Futura', sans-serif;
+}
+
+.web-column ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+.web-column li {
+  margin-bottom: 8px;
+}
+
+.web-column a {
+  color: #c9a0ff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.web-column a:hover {
+  color: #ffffff;
+}
