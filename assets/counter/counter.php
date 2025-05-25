@@ -3,7 +3,7 @@
 $file = 'counter.txt';
 
 if (!file_exists($file)) {
-  file_put_contents($file, 0);
+    file_put_contents($file, 0);
 }
 
 // Read the current count
@@ -15,6 +15,6 @@ $count++;
 // Save the new count
 file_put_contents($file, $count);
 
-// Output the count (you could also just echo it)
+// Output the count
 echo $count;
 ?>

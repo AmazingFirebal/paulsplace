@@ -35,7 +35,15 @@
   </div>
 
 
+
+
+
+
   <div class="counter">
+  Visitors: <span id="visitorCount">Loading...</span>
+</div>
+
+<div class="counter">
   Visitors: <span id="visitorCount">Loading...</span>
 </div>
 
@@ -44,8 +52,17 @@ fetch('assets/counter/counter.php')
   .then(res => res.text())
   .then(data => {
     document.getElementById('visitorCount').textContent = data;
+  })
+  .catch(error => {
+    console.error('Visitor counter failed:', error);
   });
 </script>
+
+
+
+
+
+
 
 
 </body>
