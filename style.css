@@ -215,8 +215,7 @@ details {
 .view-counter {
   position: fixed;
   bottom: 8px;
-  left: 80px; /* So it doesn’t overlap the sidebar */
-  font-family: 'Century Gothic', sans-serif;
+  left: 80px; 
   font-size: 10px;
   color: #ffccff;
   display: flex;
