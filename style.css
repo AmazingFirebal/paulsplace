@@ -55,6 +55,9 @@ body {
   height: 32px;
   image-rendering: pixelated;
   transition: transform 0.2s ease;
+  li {
+  font-family: 'Century Gothic', 'Futura', sans-serif !important;
+}
 }
 
 .taskbar-btn:hover img {
