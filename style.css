@@ -16,14 +16,14 @@ body {
 /* Sidebar (taskbar) */
 .taskbar {
   width: 64px;
-  background-color: #1a001f;
+  background-color: #694072;
   border-right: 2px solid #42006c;
-  display: flex; /* ✅ restore flex here */
+  display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
   gap: 10px;
-  position: fixed; /* ✅ keeps taskbar fixed */
+  position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
@@ -65,14 +65,14 @@ body {
 
 /* Main content */
 .content {
-  margin-left: 64px; /* ✅ matches the taskbar width */
+  margin-left: 64px; 
   padding: 40px;
   background: repeating-linear-gradient(
     0deg,
     #0b0014,
     #0b0014 2px,
-    #0c0018 2px,
-    #0c0018 4px
+    #442661 2px,
+    #523f65 4px
   );
   flex-grow: 1;
   width: calc(100% - 64px);
