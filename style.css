@@ -125,6 +125,7 @@ summary {
   gap: 8px;
   font-size: 16px;
   padding: 5px 0;
+  z-index: 10;
 }
 
 summary::-webkit-details-marker {
@@ -173,7 +174,7 @@ details {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
-  margin-left: 64px; /* To clear the taskbar */
+  margin-left: 64px; 
   padding: 40px;
 }
 
@@ -210,24 +211,6 @@ details {
 
 .web-column a:hover {
   color: #ffffff;
-}
-
-.view-counter {
-  position: fixed;
-  bottom: 8px;
-  left: 80px; 
-  font-family: 'Century Gothic', sans-serif;
-  font-size: 10px;
-  color: #ffccff;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  z-index: 999;
-}
-
-.view-counter img {
-  height: 16px;
-  image-rendering: pixelated;
 }
 
 
