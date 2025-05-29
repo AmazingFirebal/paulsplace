@@ -144,7 +144,7 @@ details[open] summary::before {
 ul {
   padding-left: 20px;
   margin: 0;
-  list-style-position: inside; /* ✅ This brings bullets into the bounding box */
+  list-style-position: inside; 
 }
 
 li {
