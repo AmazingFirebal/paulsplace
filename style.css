@@ -230,26 +230,35 @@ details {
   image-rendering: pixelated;
 }
 
-html, body {
+
+
+/*background stuff*/
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
   height: 100%;
-  overflow: hidden; /* Optional: hides scrollbars */
+  width: 100%;
+  overflow: hidden; /* Prevent scrolling */
+  position: relative;
   font-family: 'Century Gothic', sans-serif;
-  background: transparent;
 }
 
 canvas {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: -1000;
   width: 100vw;
   height: 100vh;
-  z-index: -9999; /* Puts canvas behind everything */
-  pointer-events: none;
+  display: block;
 }
 
 .content, .taskbar {
   position: relative;
-  z-index: 1; /* Ensures it's above the canvas */
+  z-index: 1; /* Keep UI above the canvas */
+  padding: 1rem;
 }

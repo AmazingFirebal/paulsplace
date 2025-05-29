@@ -4,14 +4,12 @@ function setup() {
 }
 
 function draw() {
-  background(50, 0, 70, 20);
+  background(30, 0, 60, 20);
 
-  fill(150 + sin(frameCount * 0.01) * 100, 50, 200, 100);
-  ellipse(
-    width / 2 + sin(frameCount * 0.01) * 200,
-    height / 2 + cos(frameCount * 0.01) * 200,
-    300, 300
-  );
+  fill(150, 0, 255, 100);
+  let x = width / 2 + sin(frameCount * 0.01) * 150;
+  let y = height / 2 + cos(frameCount * 0.01) * 150;
+  ellipse(x, y, 300, 300);
 }
 
 function windowResized() {
