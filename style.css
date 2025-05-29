@@ -234,6 +234,13 @@ canvas {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1;
-  pointer-events: none;
+  z-index: -10; /* behind everything */
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* let mouse clicks pass through */
+}
+
+.content, .taskbar {
+  position: relative;
+  z-index: 1;
 }
