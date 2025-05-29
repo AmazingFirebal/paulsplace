@@ -230,11 +230,12 @@ details {
   image-rendering: pixelated;
 }
 
-#bgCanvas {
+#swirlCanvas {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1;
   width: 100vw;
   height: 100vh;
+  z-index: -1;
+  pointer-events: none;
 }
