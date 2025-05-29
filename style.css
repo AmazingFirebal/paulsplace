@@ -230,17 +230,26 @@ details {
   image-rendering: pixelated;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* Optional: hides scrollbars */
+  font-family: 'Century Gothic', sans-serif;
+  background: transparent;
+}
+
 canvas {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -10; /* behind everything */
   width: 100vw;
   height: 100vh;
-  pointer-events: none; /* let mouse clicks pass through */
+  z-index: -9999; /* Puts canvas behind everything */
+  pointer-events: none;
 }
 
 .content, .taskbar {
   position: relative;
-  z-index: 1;
+  z-index: 1; /* Ensures it's above the canvas */
 }
