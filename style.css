@@ -238,8 +238,8 @@ details {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 300px;
-  height: 300px;
+  width: 40%;
+  height: 40%;
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 0;
