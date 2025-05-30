@@ -218,8 +218,8 @@ details {
   position: fixed;
   top: 90%;
   left: 90%;
-  width: 10%;
-  height: 10%;
+  width: 5%;
+  height: 15%;
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 0;
