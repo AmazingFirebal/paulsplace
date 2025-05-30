@@ -67,15 +67,12 @@ body {
 .content {
   margin-left: 64px; 
   padding: 40px;
-  background: repeating-linear-gradient(
-    0deg,
-    #0b0014,
-    #0b0014 2px,
-    #442661 2px,
-    #523f65 4px
-  );
+  background: rgba(11, 0, 20, 0.9);
   flex-grow: 1;
   width: calc(100% - 64px);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
 /* Optional file-section and <details> styles */
@@ -245,4 +242,20 @@ details {
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.parallax-background {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background-image: url('assets/images/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  pointer-events: none;
+  transition: transform 0.2s ease-out;
+  opacity: 0.8;
 }
