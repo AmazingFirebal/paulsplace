@@ -235,13 +235,13 @@ details {
 }
 
 .disk {
-  animation: spin linear infinite;
-    opacity: 0.5;
-}
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform-origin: center center;
+  opacity: 0.5;
 }
 
 .parallax-background {
