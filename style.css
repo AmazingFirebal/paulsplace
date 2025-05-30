@@ -216,10 +216,10 @@ details {
 
 .background-disk {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 50%;
-  height: 50%;
+  top: 90%;
+  left: 90%;
+  width: 10%;
+  height: 10%;
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 0;
