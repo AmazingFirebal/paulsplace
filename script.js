@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const disk = document.querySelector('.disk');
   let lastScrollTop = 0;
-  let speed = 0.05;
+  let speed = 0.10;
   let angle = 0;
 
   function animate() {
