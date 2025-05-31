@@ -250,6 +250,10 @@ details {
   left: -20px;
   right: -20px;
   bottom: -20px;
+  background-image: url('assets/images/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   z-index: -1;
   pointer-events: none;
   transition: transform 0.2s ease-out;
