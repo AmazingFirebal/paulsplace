@@ -239,12 +239,21 @@ details {
 }
 
 .parallax-background {
+<<<<<<< HEAD
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  right: -20%;
+  bottom: -20%;
+  background-image: url('assets/images/background.PNG');
+=======
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('assets/images/background.png');
+  background-image: url('assets/images/background.PNG');
+>>>>>>> 25d1c5322926b291df57965ea9c894dd3c060344
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
