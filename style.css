@@ -246,10 +246,10 @@ details {
 
 .parallax-background {
   position: absolute;
-  top: -20px;
-  left: -20px;
-  right: -20px;
-  bottom: -20px;
+  top: -20%;
+  left: -20%;
+  right: -20%;
+  bottom: -20%;
   background-image: url('assets/images/background.png');
   background-size: cover;
   background-position: center;
