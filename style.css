@@ -67,7 +67,7 @@ body {
 .content {
   margin-left: 64px; 
   padding: 40px;
-  background: rgba(11, 0, 20, 0.9);
+  background: transparent;
   flex-grow: 1;
   width: calc(100% - 64px);
   position: relative;
@@ -239,11 +239,11 @@ details {
 }
 
 .parallax-background {
-  position: absolute;
-  top: -20%;
-  left: -20%;
-  right: -20%;
-  bottom: -20%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-image: url('assets/images/background.png');
   background-size: cover;
   background-position: center;
