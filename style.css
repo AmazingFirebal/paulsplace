@@ -222,7 +222,7 @@ details {
   height: 10%;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  z-index: 0;
+  z-index: 2;
 }
 
 .shadow, .disk {
@@ -235,13 +235,7 @@ details {
 }
 
 .disk {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  transform-origin: center center;
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .parallax-background {
