@@ -245,6 +245,7 @@ details {
   left: 0;
   right: 0;
   bottom: 0;
+  background-color: #0b0014;
   background-image: url('assets/images/background.PNG');
   background-size: cover;
   background-position: center;

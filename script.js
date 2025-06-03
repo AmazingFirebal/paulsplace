@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const disk = document.querySelector('.disk');
   let lastScrollTop = 0;
-  let speed = 0.10;
+  let speed = 0.05;
   let angle = 0;
 
   function animate() {
@@ -28,9 +28,12 @@ document.addEventListener('mousemove', (e) => {
     const mouseX = e.clientX - centerX;
     const mouseY = e.clientY - centerY;
     
-    const moveX = (mouseX / centerX) * 20;
-    const moveY = (mouseY / centerY) * 20;
+    const moveX = (mouseX / centerX) * 10;
+    const moveY = (mouseY / centerY) * 5;
     
-    bg.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    const clampedX = Math.max(-15, Math.min(15, moveX));
+    const clampedY = Math.max(-10, Math.min(10, moveY));
+    
+    bg.style.transform = `translate(${clampedX}px, ${clampedY}px)`;
   });
 });
