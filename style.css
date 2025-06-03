@@ -241,11 +241,11 @@ details {
 
 .parallax-background {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #0b0014;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  background-color: #ff0000;
   background-image: url('assets/images/background.PNG');
   background-size: cover;
   background-position: center;
