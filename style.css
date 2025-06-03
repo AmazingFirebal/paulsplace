@@ -6,11 +6,11 @@
 
 body {
   font-family: 'Press Start 2P', monospace;
-  background-color: transparent;
+  background-color: #0b0014;
   color: #c9a0ff;
   display: flex;
   min-height: 100vh;
-  position: relative;
+  
 }
 
 /* Sidebar (taskbar) */
@@ -27,6 +27,7 @@ body {
   top: 0;
   left: 0;
   height: 100vh;
+  z-index: 10;
 }
 
 .taskbar-btn {
@@ -67,23 +68,12 @@ body {
 .content {
   margin-left: 64px; 
   padding: 40px;
+  background: transparent;
   flex-grow: 1;
   width: calc(100% - 64px);
   position: relative;
   overflow: hidden;
   z-index: 1;
-}
-
-.content::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(11, 0, 20, 0.85);
-  z-index: -1;
-  pointer-events: none;
 }
 
 /* Optional file-section and <details> styles */
@@ -259,8 +249,8 @@ details {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: -2;
+  z-index: -1;
   pointer-events: none;
   transition: transform 0.2s ease-out;
-  opacity: 1;
+  opacity: 0.8;
 }
