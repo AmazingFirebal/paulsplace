@@ -10,7 +10,11 @@ body {
   color: #c9a0ff;
   display: flex;
   min-height: 100vh;
-  
+}
+
+h1 {
+  font-family: 'Chicago', sans-serif;
+  margin-bottom: 20px;
 }
 
 /* Sidebar (taskbar) */
@@ -43,10 +47,9 @@ body {
   gap: 5px;
   cursor: pointer;
   transition: background 0.2s;
-  font-family: 'urw-gothic', sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
   text-decoration: none;
 }
-
 
 .taskbar-btn:hover {
   background-color: #2b0044;
@@ -57,7 +60,6 @@ body {
   height: 32px;
   image-rendering: pixelated;
   transition: transform 0.2s ease;
-  
 }
 
 .taskbar-btn:hover img {
@@ -186,11 +188,11 @@ details {
 }
 
 .section-title {
+  font-family: 'Chicago', sans-serif;
   color: #ffccff;
   font-size: 16px;
   margin-bottom: 12px;
 }
-
 
 .web-column ul {
   list-style-type: square;
@@ -202,6 +204,7 @@ details {
 }
 
 .web-column a {
+  font-family: 'IBM Plex Mono', monospace;
   color: #c9a0ff;
   text-decoration: none;
   transition: color 0.2s;
@@ -210,8 +213,6 @@ details {
 .web-column a:hover {
   color: #ffffff;
 }
-
-
 
 /*background stuff*/
 
