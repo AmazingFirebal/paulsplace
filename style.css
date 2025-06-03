@@ -241,10 +241,10 @@ details {
 
 .parallax-background {
   position: fixed;
-  top: 20px;
-  left: 20px;
-  right: 20px;
-  bottom: 20px;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
   background-color: #ff0000;
   background-image: url('assets/images/background.PNG');
   background-size: cover;
