@@ -11,8 +11,15 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'ibm_xga-ai';
+  src: url('assets/fonts/Web437_IBM_XGA-AI_12x20.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-  font-family: 'urw-gothic', sans-serif;
+  font-family: 'ibm_xga-ai', monospace;
   background-color: #0b0014;
   color: #c9a0ff;
   display: flex;
@@ -263,4 +270,11 @@ details {
   pointer-events: none;
   transition: transform 0.2s ease-out;
   opacity: 0.8;
+}
+
+/* Keep links in IBM Plex Mono */
+a {
+  font-family: 'IBM Plex Mono', monospace;
+  text-decoration: none;
+  color: #c9a0ff;
 }
