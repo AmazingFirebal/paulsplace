@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'ibm_ps-55_re';
+  src: url('assets/fonts/Web437_IBM_PS-55_re.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   font-family: 'urw-gothic', sans-serif;
   background-color: #0b0014;
