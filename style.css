@@ -19,29 +19,22 @@
 }
 
 @font-face {
-  font-family: 'cgathin';
-  src: url('assets/fonts/Web437_CGAthin.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'WebPlus_IBM_CGAthin-2y';
+  font-family: 'ibm_cga_thin';
   src: url('assets/fonts/WebPlus_IBM_CGAthin-2y.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 body {
-  font-family: 'cgathin', monospace;
+  font-family: 'ibm_xga-ai', monospace;
   background-color: #0b0014;
   color: #c9a0ff;
   display: flex;
   min-height: 100vh;
 }
   
-h1 {
-  font-family: 'ibm_ps-55_re', monospace;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'ibm_cga_thin', 'ibm_ps-55_re', monospace;
   margin-bottom: 20px;
 }
 
@@ -141,11 +134,10 @@ details {
   border-radius: 6px;
   margin-bottom: 20px;
   padding: 10px;
-  font-family: 'cgathin', monospace;
 }
 
 summary {
-  font-family: 'WebPlus_IBM_CGAthin-2y', sans-serif;
+  font-family: 'ChicagoFLF', sans-serif;
   cursor: pointer;
   font-weight: bold;
   color: #ffccff;
@@ -218,7 +210,7 @@ details {
 }
 
 .section-title {
-  font-family: 'WebPlus_IBM_CGAthin-2y', sans-serif;
+  font-family: 'ChicagoFLF', sans-serif;
   color: #ffccff;
   font-size: 16px;
   margin-bottom: 12px;
