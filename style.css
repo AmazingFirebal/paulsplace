@@ -68,7 +68,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: 5px;
   cursor: pointer;
   transition: background 0.2s;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'ibm_xga-ai', monospace;
   text-decoration: none;
 }
 
@@ -137,7 +137,7 @@ details {
 }
 
 summary {
-  font-family: 'ChicagoFLF', sans-serif;
+  font-family: 'ibm_cga_thin', monospace;
   cursor: pointer;
   font-weight: bold;
   color: #ffccff;
@@ -210,7 +210,7 @@ details {
 }
 
 .section-title {
-  font-family: 'ChicagoFLF', sans-serif;
+  font-family: 'ibm_cga_thin', monospace;
   color: #ffccff;
   font-size: 16px;
   margin-bottom: 12px;
@@ -226,7 +226,7 @@ details {
 }
 
 .web-column a {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'ibm_xga-ai', monospace;
   color: #c9a0ff;
   text-decoration: none;
   transition: color 0.2s;
@@ -279,9 +279,9 @@ details {
   opacity: 0.8;
 }
 
-/* Keep links in IBM Plex Mono */
+/* Keep links in IBM font */
 a {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'ibm_xga-ai', monospace;
   text-decoration: none;
   color: #c9a0ff;
 }
