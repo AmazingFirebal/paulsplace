@@ -18,14 +18,21 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'cgathin';
+  src: url('assets/fonts/Web437_CGAthin.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-  font-family: 'ibm_xga-ai', monospace;
+  font-family: 'cgathin', monospace;
   background-color: #0b0014;
   color: #c9a0ff;
   display: flex;
   min-height: 100vh;
 }
-
+  
 h1 {
   font-family: 'ibm_ps-55_re', monospace;
   margin-bottom: 20px;
@@ -127,10 +134,11 @@ details {
   border-radius: 6px;
   margin-bottom: 20px;
   padding: 10px;
+  font-family: 'cgathin', monospace;
 }
 
 summary {
-  font-family: 'ChicagoFLF', sans-serif;
+  font-family: 'cgathin', sans-serif;
   cursor: pointer;
   font-weight: bold;
   color: #ffccff;
@@ -203,7 +211,7 @@ details {
 }
 
 .section-title {
-  font-family: 'ChicagoFLF', sans-serif;
+  font-family: 'cgathin', sans-serif;
   color: #ffccff;
   font-size: 16px;
   margin-bottom: 12px;
