@@ -30,11 +30,14 @@ function init() {
     scene.add(directionalLight);
     
     // Load the model
-    const loader = new THREE.GLTFLoader();
+    const loader = new THREE.FBXLoader();
     loader.load(
-        'assets/3d/model.gltf', // Update this path to match your model file
-        function (gltf) {
-            model = gltf.scene;
+        'assets/3d/untitled.fbx',
+        function (fbx) {
+            model = fbx;
+            
+            // Scale the model if needed
+            model.scale.setScalar(0.01); // FBX models often need scaling
             
             // Rotate model 45 degrees to the left
             model.rotation.y = Math.PI / 4;
