@@ -305,16 +305,85 @@ a {
   padding: 20px;
   max-width: 400px;
   min-width: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: calc(100vh - 40px);
+  position: sticky;
+  top: 20px;
+  overflow-y: auto;
 }
 
-.right-panel img {
+.panel-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.panel-image {
+  width: 100%;
+}
+
+.panel-image img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 0 20px rgba(201, 160, 255, 0.2);
+}
+
+.panel-text {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.panel-text h2 {
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  color: #ffccff;
+}
+
+.panel-text h3 {
+  font-size: 1.2em;
+  margin: 20px 0 10px;
+  color: #ffccff;
+}
+
+.panel-text p {
+  margin-bottom: 15px;
+}
+
+.panel-text ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.panel-text li {
+  margin-bottom: 8px;
+}
+
+.status-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #42006c;
+}
+
+.status-section p {
+  margin-bottom: 8px;
+}
+
+/* Add custom scrollbar for the right panel */
+.right-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.right-panel::-webkit-scrollbar-track {
+  background: rgba(30, 0, 51, 0.5);
+}
+
+.right-panel::-webkit-scrollbar-thumb {
+  background: #42006c;
+  border-radius: 4px;
+}
+
+.right-panel::-webkit-scrollbar-thumb:hover {
+  background: #694072;
 }
 
 .model-viewer {
