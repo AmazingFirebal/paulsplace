@@ -412,3 +412,60 @@ a {
 .email-link:hover {
   color: #ffffff;
 }
+
+/* Contact Form Styles */
+.contact-form {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #42006c;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px 12px;
+  background-color: rgba(30, 0, 51, 0.5);
+  border: 1px solid #42006c;
+  border-radius: 4px;
+  color: #c9a0ff;
+  font-family: 'ibm_xga-ai', monospace;
+  font-size: 14px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #694072;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #c9a0ff;
+  box-shadow: 0 0 5px rgba(201, 160, 255, 0.2);
+}
+
+.form-group textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.form-submit {
+  background-color: #42006c;
+  color: #c9a0ff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'ibm_cga_thin', monospace;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.form-submit:hover {
+  background-color: #694072;
+  color: #ffffff;
+}
