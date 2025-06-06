@@ -402,3 +402,13 @@ a {
   top: 0;
   width: 25%;
 }
+
+/* Email link style */
+.email-link {
+  color: #c9a0ff;
+  transition: color 0.2s;
+}
+
+.email-link:hover {
+  color: #ffffff;
+}
