@@ -424,6 +424,13 @@ a {
   margin-bottom: 15px;
 }
 
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #ffccff;
+  font-family: 'ibm_cga_thin', monospace;
+}
+
 .form-group input,
 .form-group textarea {
   width: 100%;
@@ -468,4 +475,15 @@ a {
 .form-submit:hover {
   background-color: #694072;
   color: #ffffff;
+}
+
+.success-message {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: rgba(30, 51, 0, 0.5);
+  border: 1px solid #42006c;
+  border-radius: 4px;
+  color: #c9a0ff;
+  text-align: center;
+  font-family: 'ibm_xga-ai', monospace;
 }
