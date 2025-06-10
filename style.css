@@ -489,28 +489,38 @@ a {
 }
 
 /* Custom WebKit Scrollbar */
-::-webkit-scrollbar {
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
   width: 16px;
 }
 
-::-webkit-scrollbar-track {
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
   background: url("assets/images/scrollbar-track.png") center center no-repeat;
   background-size: cover;
 }
 
-::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
   background: url("assets/images/scrollbar-thumb.png") center center no-repeat;
   background-size: cover;
   border-radius: 8px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
   background: url("assets/images/scrollbar-thumb-active.png") center center no-repeat;
   background-size: cover;
 }
 
+/* Ensure body has scroll */
+html, body {
+  min-height: 100%;
+  overflow-y: auto;
+}
+
 /* For Firefox */
-* {
+html, body {
   scrollbar-width: auto;
   scrollbar-color: #694072 #2b0044;
 }
