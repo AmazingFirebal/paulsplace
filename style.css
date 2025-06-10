@@ -489,38 +489,45 @@ a {
 }
 
 /* Custom WebKit Scrollbar */
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 16px;
+  height: 16px;
 }
 
-html::-webkit-scrollbar-track,
-body::-webkit-scrollbar-track {
-  background: url("assets/images/scrollbar-track.png") center center no-repeat;
-  background-size: cover;
+::-webkit-scrollbar-track {
+  -webkit-mask: url("assets/images/scrollbar-track.png");
+  mask: url("assets/images/scrollbar-track.png");
+  -webkit-mask-repeat: repeat-y;
+  mask-repeat: repeat-y;
+  background-color: #2b0044;
 }
 
-html::-webkit-scrollbar-thumb,
-body::-webkit-scrollbar-thumb {
-  background: url("assets/images/scrollbar-thumb.png") center center no-repeat;
-  background-size: cover;
-  border-radius: 8px;
+::-webkit-scrollbar-thumb {
+  -webkit-mask: url("assets/images/scrollbar-thumb.png");
+  mask: url("assets/images/scrollbar-thumb.png");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  background-color: #694072;
+  min-height: 32px;
 }
 
-html::-webkit-scrollbar-thumb:hover,
-body::-webkit-scrollbar-thumb:hover {
-  background: url("assets/images/scrollbar-thumb-active.png") center center no-repeat;
-  background-size: cover;
-}
-
-/* Ensure body has scroll */
-html, body {
-  min-height: 100%;
-  overflow-y: auto;
+::-webkit-scrollbar-thumb:hover {
+  -webkit-mask: url("assets/images/scrollbar-thumb-active.png");
+  mask: url("assets/images/scrollbar-thumb-active.png");
+  background-color: #8a5694;
 }
 
 /* For Firefox */
-html, body {
+* {
   scrollbar-width: auto;
   scrollbar-color: #694072 #2b0044;
+}
+
+/* Force overflow on the body */
+body {
+  min-height: 101vh;
 }
