@@ -491,34 +491,18 @@ a {
 /* Custom WebKit Scrollbar */
 ::-webkit-scrollbar {
   width: 16px;
-  height: 16px;
 }
 
 ::-webkit-scrollbar-track {
-  -webkit-mask: url("assets/images/scrollbar-track.png");
-  mask: url("assets/images/scrollbar-track.png");
-  -webkit-mask-repeat: repeat-y;
-  mask-repeat: repeat-y;
-  background-color: #2b0044;
+  background: url("/assets/images/scrollbar-track.png");
 }
 
 ::-webkit-scrollbar-thumb {
-  -webkit-mask: url("assets/images/scrollbar-thumb.png");
-  mask: url("assets/images/scrollbar-thumb.png");
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  background-color: #694072;
-  min-height: 32px;
+  background: url("/assets/images/scrollbar-thumb.png");
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  -webkit-mask: url("assets/images/scrollbar-thumb-active.png");
-  mask: url("assets/images/scrollbar-thumb-active.png");
-  background-color: #8a5694;
+  background: url("/assets/images/scrollbar-thumb-active.png");
 }
 
 /* Force overflow on the body */
