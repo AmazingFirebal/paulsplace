@@ -99,7 +99,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 1;
 }
 
-/* Optional file-section and <details> styles */
+/* File section styles */
 .file-section {
   margin-bottom: 40px;
 }
@@ -128,6 +128,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
 }
 
+/* Details and summary styles */
 details {
   background-color: #1e0033;
   border: 1px solid #4b0082;
@@ -164,6 +165,7 @@ details[open] summary::before {
   content: "▼";
 }
 
+/* List styles */
 ul {
   padding-left: 20px;
   margin: 0;
@@ -176,22 +178,7 @@ li {
   list-style-type: square;
 }
 
-.file-section ul {
-  list-style-type: square;
-}
-
-details {
-  margin-bottom: 30px;
-}
-
-.web-content {
-  display: flex;
-  gap: 40px;
-  padding: 40px;
-  margin-left: 64px; /* so it doesn't get hidden under the sidebar */
-  flex-wrap: wrap;
-}
-
+/* Web columns layout */
 .web-columns {
   display: flex;
   flex-wrap: wrap;
@@ -236,8 +223,7 @@ details {
   color: #ffffff;
 }
 
-/*background stuff*/
-
+/* Background elements */
 .background-disk {
   position: fixed;
   top: 85%;
@@ -251,173 +237,31 @@ details {
 
 .shadow, .disk {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: auto;
-  transform-origin: center center;
+  height: 100%;
+  object-fit: contain;
 }
 
 .disk {
-  opacity: 1;
+  animation: spin 10s linear infinite;
 }
 
 .parallax-background {
   position: fixed;
-  top: -20px;
-  left: -20px;
-  right: -20px;
-  bottom: -20px;
-  background-color: #3e0068;
-  background-image: url('assets/images/background.PNG');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1;
-  pointer-events: none;
-  transition: transform 0.2s ease-out;
-  opacity: 0.8;
-}
-
-/* Keep links in IBM font */
-a {
-  font-family: 'ibm_xga-ai', monospace;
-  text-decoration: none;
-  color: #c9a0ff;
-}
-
-.main-content {
-  display: flex;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-  gap: 20px;
-}
-
-.text-content {
-  flex: 2;
-  margin-right: 400px;
-}
-
-.right-panel {
-  position: fixed;
-  right: 0;
   top: 0;
-  width: 400px;
-  height: 100vh;
-  background-color: rgba(30, 0, 51, 0.5);
-  border-left: 2px solid #42006c;
-  padding: 20px;
-  overflow: hidden;
-}
-
-.panel-content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  left: 0;
+  width: 100%;
   height: 100%;
+  background: radial-gradient(circle at center, #2b0044 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+  transition: transform 0.1s ease-out;
 }
 
-.panel-image {
-  flex: 0 0 auto;
-  width: 100%;
-}
-
-.panel-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(201, 160, 255, 0.2);
-}
-
-.panel-text {
-  font-size: 14px;
-  line-height: 1.6;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.panel-text h2 {
-  font-size: 1.4em;
-  color: #ffccff;
-  margin: 0;
-}
-
-.panel-text h3 {
-  font-size: 1.2em;
-  color: #ffccff;
-  margin: 0;
-}
-
-.panel-text p {
-  margin: 0;
-}
-
-.panel-text ul {
-  margin: 0 0 0 20px;
-  padding: 0;
-}
-
-.panel-text li {
-  margin: 0 0 8px 0;
-}
-
-.status-section {
-  margin-top: auto;
-  padding-top: 20px;
-  border-top: 1px solid #42006c;
-}
-
-.status-section p {
-  margin: 0 0 8px 0;
-}
-
-/* Add custom scrollbar for the right panel */
-.right-panel::-webkit-scrollbar {
-  width: 8px;
-}
-
-.right-panel::-webkit-scrollbar-track {
-  background: rgba(30, 0, 51, 0.5);
-}
-
-.right-panel::-webkit-scrollbar-thumb {
-  background: #42006c;
-  border-radius: 4px;
-}
-
-.right-panel::-webkit-scrollbar-thumb:hover {
-  background: #694072;
-}
-
-.model-viewer {
-  flex: 1;
-  height: 100vh;
-  background-color: rgba(30, 0, 51, 0.5);
-  border-left: 2px solid #42006c;
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 25%;
-}
-
-/* Email link style */
-.email-link {
-  color: #c9a0ff;
-  transition: color 0.2s;
-}
-
-.email-link:hover {
-  color: #ffffff;
-}
-
-/* Contact Form Styles */
+/* Contact form styles */
 .contact-form {
   margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px solid #42006c;
+  padding: 20px;
 }
 
 .form-group {
@@ -429,34 +273,29 @@ a {
   margin-bottom: 5px;
   color: #ffccff;
   font-family: 'ibm_cga_thin', monospace;
+  font-size: 14px;
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 8px 12px;
-  background-color: rgba(30, 0, 51, 0.5);
+  padding: 8px;
+  background-color: #2b0044;
   border: 1px solid #42006c;
-  border-radius: 4px;
   color: #c9a0ff;
   font-family: 'ibm_xga-ai', monospace;
-  font-size: 14px;
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-  color: #694072;
+  border-radius: 4px;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #c9a0ff;
-  box-shadow: 0 0 5px rgba(201, 160, 255, 0.2);
+  border-color: #8a2be2;
+  box-shadow: 0 0 5px rgba(138, 43, 226, 0.5);
 }
 
 .form-group textarea {
-  height: 100px;
+  min-height: 100px;
   resize: vertical;
 }
 
@@ -464,26 +303,50 @@ a {
   background-color: #42006c;
   color: #c9a0ff;
   border: none;
-  padding: 8px 16px;
+  padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
   font-family: 'ibm_cga_thin', monospace;
-  transition: all 0.2s;
-  width: 100%;
+  transition: background-color 0.2s;
 }
 
 .form-submit:hover {
-  background-color: #694072;
-  color: #ffffff;
+  background-color: #8a2be2;
 }
 
 .success-message {
-  margin-top: 15px;
+  color: #4CAF50;
+  margin-top: 10px;
   padding: 10px;
-  background-color: rgba(30, 51, 0, 0.5);
-  border: 1px solid #42006c;
-  border-radius: 4px;
-  color: #c9a0ff;
   text-align: center;
-  font-family: 'ibm_xga-ai', monospace;
+}
+
+/* Custom Retro Scrollbar */
+::-webkit-scrollbar {
+  width: 32px;
+}
+
+::-webkit-scrollbar-track {
+  background: url('assets/images/scrollbar-track.png');
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+}
+
+::-webkit-scrollbar-thumb {
+  background: url('assets/images/scrollbar-thumb.png');
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  border: none;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: url('assets/images/scrollbar-thumb-active.png');
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+}
+
+/* For Firefox - fallback to basic styling since Firefox doesn't support image scrollbars */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #42006c #1a001f;
 }
