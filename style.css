@@ -521,12 +521,6 @@ a {
   background-color: #8a5694;
 }
 
-/* For Firefox */
-* {
-  scrollbar-width: auto;
-  scrollbar-color: #694072 #2b0044;
-}
-
 /* Force overflow on the body */
 body {
   min-height: 101vh;
