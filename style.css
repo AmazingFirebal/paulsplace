@@ -492,27 +492,49 @@ a {
 ::-webkit-scrollbar {
   width: 16px;
   height: 16px;
+  background-color: transparent;
 }
 
 ::-webkit-scrollbar-track {
-  background: url('assets/images/scrollbar-track.png') repeat-y;
-  background-size: 16px auto;
+  background: url('assets/images/scrollbar-track.png') repeat-y center;
+  background-size: contain;
+  border: none;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: url('assets/images/scrollbar-thumb.png') repeat-y;
-  background-size: 16px auto;
+  background: url('assets/images/scrollbar-thumb.png') repeat-y center;
+  background-size: contain;
   border: none;
+  min-height: 32px;
 }
 
 ::-webkit-scrollbar-thumb:hover,
 ::-webkit-scrollbar-thumb:active {
-  background: url('assets/images/scrollbar-thumb-active.png') repeat-y;
-  background-size: 16px auto;
+  background: url('assets/images/scrollbar-thumb-active.png') repeat-y center;
+  background-size: contain;
+}
+
+::-webkit-scrollbar-button:single-button {
+  background: url('assets/images/scrollbar-thumb.png') no-repeat center;
+  background-size: contain;
+  height: 16px;
+}
+
+::-webkit-scrollbar-button:single-button:hover {
+  background: url('assets/images/scrollbar-thumb-active.png') no-repeat center;
+  background-size: contain;
 }
 
 /* For Firefox */
 * {
-  scrollbar-width: thin;
+  scrollbar-width: auto;
   scrollbar-color: #694072 #2b0044;
+}
+
+/* Remove any existing right panel specific scrollbar styles */
+.right-panel::-webkit-scrollbar,
+.right-panel::-webkit-scrollbar-track,
+.right-panel::-webkit-scrollbar-thumb,
+.right-panel::-webkit-scrollbar-thumb:hover {
+  all: unset;
 }
