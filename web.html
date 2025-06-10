@@ -7,7 +7,6 @@
   <link rel="icon" href="assets/images/paulscomputer.png" type="image/png">
   <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
 
@@ -38,8 +37,9 @@
       </ul>
       
       <div class="contact-form">
-        <h2>Contact us</h2>
-        <form id="contactForm">
+        <h2>Contact Me</h2>
+        <p><a href="mailto:lachycharles28@gmail.com" class="email-link">Or email me directly: lachycharles28@gmail.com</a></p>
+        <form action="https://formspree.io/f/xrbkpown" method="POST" id="contactForm">
           <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
@@ -73,52 +73,6 @@
 
 
   
-<script>
-  (function() {
-    // Initialize EmailJS with your public key
-    emailjs.init("YOUR_PUBLIC_KEY");
-
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      
-      // Show loading state
-      const button = this.querySelector('button');
-      const originalText = button.textContent;
-      button.textContent = 'Sending...';
-      button.disabled = true;
-
-      // Get form data
-      const templateParams = {
-        from_name: document.getElementById('name').value,
-        from_email: document.getElementById('email').value,
-        message: document.getElementById('message').value,
-        to_email: 'lachycharles28@gmail.com'
-      };
-
-      // Send the email
-      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
-        .then(function() {
-          // Show success message
-          document.getElementById('success-message').style.display = 'block';
-          // Reset form
-          document.getElementById('contactForm').reset();
-          // Reset button
-          button.textContent = originalText;
-          button.disabled = false;
-          // Hide success message after 5 seconds
-          setTimeout(() => {
-            document.getElementById('success-message').style.display = 'none';
-          }, 5000);
-        }, function(error) {
-          console.error('Failed to send email:', error);
-          button.textContent = originalText;
-          button.disabled = false;
-          alert('Failed to send message. Please try again.');
-        });
-    });
-  })();
-</script>
-
 <script src="script.js"></script>
 </body>
 </html>
