@@ -1,9 +1,3 @@
-/* Firefox Scrollbar */
-* {
-  scrollbar-width: auto;
-  scrollbar-color: #694072 #2b0044;
-}
-
 /* Hide scrollbar when not needed */
 html {
   overflow-y: auto;
