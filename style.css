@@ -248,6 +248,7 @@ details {
   gap: 40px;
   margin-left: 64px; 
   padding: 40px;
+  min-height: calc(100vh - 80px); /* Full viewport height minus padding */
 }
 
 .web-column {
@@ -257,6 +258,8 @@ details {
   border-radius: 10px;
   flex: 1;
   min-width: 250px;
+  height: calc(100vh - 160px); /* Full height minus padding and margins */
+  overflow-y: auto;
 }
 
 .section-title {
