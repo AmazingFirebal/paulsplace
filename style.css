@@ -22,10 +22,14 @@ html {
     url("/assets/images/scroll bar/row-3-column-1.png") bottom center no-repeat,
     url("/assets/images/scroll bar/row-2-column-1.png") center repeat-y;
   background-size: 
-    100% 32px,  /* top image */
-    100% 32px,  /* bottom image */
-    100% 32px;  /* middle image */
-  min-height: 96px; /* Minimum height to show all three parts */
+    24px 24px,  /* top image */
+    24px 24px,  /* bottom image */
+    24px 24px;  /* middle image */
+  background-position: 
+    center top,
+    center bottom,
+    center center;
+  min-height: 72px; /* Minimum height to show all three parts */
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -34,9 +38,13 @@ html {
     url("/assets/images/scroll bar/row-3-column-1.png") bottom center no-repeat,
     url("/assets/images/scroll bar/row-2-column-1.png") center repeat-y;
   background-size: 
-    100% 32px,
-    100% 32px,
-    100% 32px;
+    24px 24px,
+    24px 24px,
+    24px 24px;
+  background-position: 
+    center top,
+    center bottom,
+    center center;
 }
 
 * {
