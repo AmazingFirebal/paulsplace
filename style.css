@@ -518,8 +518,3 @@ a {
   text-align: center;
   font-family: 'ibm_xga-ai', monospace;
 }
-
-/* Force overflow on the body */
-body {
-  min-height: 101vh;
-}
