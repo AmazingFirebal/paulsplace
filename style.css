@@ -30,7 +30,7 @@ html {
     center top,
     center bottom,
     center center;
-  min-height: 72px; /* Minimum height to show all three parts */
+  min-height: 20px; /* Minimum height to show all three parts */
 }
 
 ::-webkit-scrollbar-thumb:hover {
