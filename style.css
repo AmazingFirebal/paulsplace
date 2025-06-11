@@ -1,12 +1,13 @@
 /* Hide scrollbar when not needed */
 html {
-  overflow-y: auto;
-  scrollbar-gutter: stable;
+  overflow-y: overlay;
+  scrollbar-gutter: auto;
 }
 
 /* Custom WebKit Scrollbar */
 ::-webkit-scrollbar {
   width: 32px;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-track {
