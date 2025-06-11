@@ -11,8 +11,8 @@ html {
 
 ::-webkit-scrollbar-track {
   background: url("/assets/images/scrollbar-track.png");
-  background-size: 100% auto;
-  background-repeat: repeat-y;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 ::-webkit-scrollbar-thumb {
