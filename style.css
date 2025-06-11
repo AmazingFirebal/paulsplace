@@ -530,7 +530,7 @@ a {
 .success-message {
   margin-top: 15px;
   padding: 10px;
-  background-color: rgba(30, 51, 0, 0.5);
+  background-color: rgb(193, 255, 194);
   border: 1px solid #42006c;
   border-radius: 4px;
   color: #c9a0ff;
