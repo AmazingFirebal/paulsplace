@@ -1,7 +1,0 @@
-{
-  "title": "Latest Project: Smart Home Automation",
-  "brief": "Exploring the possibilities of home automation with Raspberry Pi",
-  "image": "assets/blog/smart-home.jpg",
-  "content": "Today I'm excited to share my latest project: a custom smart home automation system built with Raspberry Pi. The system currently controls lighting, temperature, and security cameras. What makes this project special is its focus on privacy and local processing - all data stays within your home network. I'll be sharing more details about the setup and code in upcoming posts!",
-  "tags": ["projects", "raspberry-pi", "smart-home", "automation"]
-} 
