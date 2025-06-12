@@ -341,15 +341,13 @@ a {
 
 .main-content {
   display: flex;
-  width: 100%;
+  gap: 2rem;
   position: relative;
-  z-index: 1;
-  gap: 20px;
 }
 
 .text-content {
-  flex: 2;
-  margin-right: 400px;
+  flex: 1;
+  min-width: 0;
 }
 
 .right-panel {
@@ -362,6 +360,12 @@ a {
   border-left: 2px solid #42006c;
   padding: 20px;
   overflow: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.right-panel.hidden {
+  transform: translateX(100%);
+  opacity: 0;
 }
 
 .panel-content {
@@ -548,12 +552,33 @@ a {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   backdrop-filter: blur(10px);
+  position: relative;
+  min-height: 300px;
+  overflow: hidden;
 }
 
 .blog-posts {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.blog-posts::-webkit-scrollbar {
+  width: 8px;
+}
+
+.blog-posts::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.blog-posts::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
 }
 
 .blog-post {
@@ -561,15 +586,24 @@ a {
   border-radius: 6px;
   overflow: hidden;
   transition: transform 0.2s ease;
+  opacity: 0.7;
+  transform: scale(0.95);
+}
+
+.blog-post:first-child {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .blog-post:hover {
   transform: translateY(-2px);
+  opacity: 1;
 }
 
 .blog-post-brief {
   padding: 1rem;
   cursor: pointer;
+  position: relative;
 }
 
 .blog-post-header {
@@ -582,6 +616,7 @@ a {
 .blog-post-header h3 {
   margin: 0;
   color: #fff;
+  font-size: 1.2rem;
 }
 
 .blog-date {
@@ -591,9 +626,10 @@ a {
 
 .blog-post-image {
   width: 100%;
-  height: 200px;
+  height: 150px;
   overflow: hidden;
   margin-bottom: 1rem;
+  border-radius: 4px;
 }
 
 .blog-post-image img {
@@ -605,17 +641,27 @@ a {
 .blog-brief {
   color: #ccc;
   margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 .blog-post-content {
   padding: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(0, 0, 0, 0.2);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.blog-post-content.expanded {
+  max-height: 1000px;
 }
 
 .blog-post-content p {
   color: #fff;
   line-height: 1.6;
+  margin: 0 0 1rem 0;
 }
 
 .blog-tags {
