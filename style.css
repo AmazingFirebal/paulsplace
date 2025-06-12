@@ -552,16 +552,22 @@ a {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   backdrop-filter: blur(10px);
-  position: relative;
-  min-height: 300px;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  min-height: 200px;
+  max-height: 300px;
   overflow: hidden;
+  z-index: 100;
 }
 
 .blog-posts {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  max-height: 300px;
+  max-height: 250px;
   overflow-y: auto;
   padding-right: 1rem;
   scrollbar-width: thin;
@@ -601,7 +607,7 @@ a {
 }
 
 .blog-post-brief {
-  padding: 1rem;
+  padding: 0.75rem;
   cursor: pointer;
   position: relative;
 }
@@ -610,25 +616,25 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .blog-post-header h3 {
   margin: 0;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .blog-date {
   color: #888;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .blog-post-image {
   width: 100%;
-  height: 150px;
+  height: 120px;
   overflow: hidden;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   border-radius: 4px;
 }
 
@@ -641,12 +647,12 @@ a {
 .blog-brief {
   color: #ccc;
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   line-height: 1.4;
 }
 
 .blog-post-content {
-  padding: 1rem;
+  padding: 0.75rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(0, 0, 0, 0.2);
   max-height: 0;
@@ -660,22 +666,23 @@ a {
 
 .blog-post-content p {
   color: #fff;
-  line-height: 1.6;
-  margin: 0 0 1rem 0;
+  line-height: 1.5;
+  margin: 0 0 0.75rem 0;
+  font-size: 0.9rem;
 }
 
 .blog-tags {
   display: flex;
   gap: 0.5rem;
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   flex-wrap: wrap;
 }
 
 .blog-tag {
   background: rgba(255, 255, 255, 0.1);
-  padding: 0.25rem 0.75rem;
-  border-radius: 15px;
-  font-size: 0.8rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
   color: #fff;
 }
 
