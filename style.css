@@ -557,19 +557,18 @@ a {
   left: 50%;
   transform: translateX(-50%);
   width: 600px;
-  min-height: 200px;
-  max-height: 300px;
+  height: 150px; /* Reduced height */
   overflow: hidden;
   z-index: 100;
   mask-image: linear-gradient(to bottom, 
     rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 1) 50%,
-    rgba(0, 0, 0, 0.5) 100%
+    rgba(0, 0, 0, 0.8) 30%,
+    rgba(0, 0, 0, 0) 100%
   );
   -webkit-mask-image: linear-gradient(to bottom, 
     rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 1) 50%,
-    rgba(0, 0, 0, 0.5) 100%
+    rgba(0, 0, 0, 0.8) 30%,
+    rgba(0, 0, 0, 0) 100%
   );
 }
 
@@ -577,7 +576,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  max-height: 250px;
+  height: 100%;
   overflow-y: auto;
   padding-right: 1rem;
   scrollbar-width: thin;
@@ -591,10 +590,10 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100px;
+  height: 60px;
   background: linear-gradient(to bottom, 
     rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.8) 100%
+    rgba(0, 0, 0, 1) 100%
   );
   pointer-events: none;
 }
