@@ -1,0 +1,13 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Test",
+      "brief": "A Test for my blog",
+      "image": "assets\images\paulscomputer.png",
+      "date": "2025-06-12",
+      "content": "Blah blah blah blog stuff blah blah blah",
+      "tags": ["test"]
+    },
+  ]
+} 

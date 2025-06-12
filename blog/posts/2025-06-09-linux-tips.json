@@ -1,0 +1,7 @@
+{
+  "title": "Essential Linux Commands for Beginners",
+  "brief": "A collection of must-know Linux commands for daily use",
+  "image": "assets/blog/linux-terminal.jpg",
+  "content": "Linux can be intimidating for newcomers, but mastering a few basic commands can make a world of difference. In this post, I'll share some essential commands that I use daily, along with practical examples. From file management to system monitoring, these commands form the foundation of efficient Linux usage. Perfect for those who are just starting their Linux journey!",
+  "tags": ["linux", "tutorial", "command-line", "beginners"]
+} 
