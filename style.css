@@ -332,16 +332,6 @@ details {
   opacity: 0.8;
 }
 
-/* Parallax background for the main section */
-.parallax-bg {
-  background-image: url('your-parallax-image.jpg'); /* Replace with your image */
-  min-height: 400px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 /* Keep links in IBM font */
 a {
   font-family: 'ibm_xga-ai', monospace;
