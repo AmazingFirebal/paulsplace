@@ -7,20 +7,10 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <style>
-        /* Parallax background for the main section */
-        .parallax-bg {
-          background-image: url('your-parallax-image.jpg'); /* TODO: Replace with your image path */
-          min-height: 400px;
-          background-attachment: fixed;
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
-        }
-    </style>
 </head>
 <body>
+    <!-- The parallax-background div will be added inside .content -->
+    <!-- The inline style block has been removed -->
     <div class="taskbar">
         <a href="index.html" class="taskbar-btn">
             <img src="assets/images/home.png" alt="Home">
@@ -45,9 +35,8 @@
     </div>
 
     <div class="content">
-        <div class="parallax-bg">
-            <!-- This div is styled as a parallax background banner -->
-        </div>
+        <div class="parallax-background"></div> <!-- Added this line, same as index.html -->
+                                                <!-- The old .parallax-bg div has been removed -->
         <div class="main-content">
             <div class="text-content">
                 <h1>Paul's Blog</h1>
