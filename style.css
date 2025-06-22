@@ -2,50 +2,29 @@
 html {
   overflow-y: overlay;
   scrollbar-gutter: auto;
+  /* Firefox scrollbar styling */
+  scrollbar-width: thin;
+  scrollbar-color: #42006c #2b0044;
 }
 
 /* Custom WebKit Scrollbar */
 ::-webkit-scrollbar {
-  width: 32px;
-  background: transparent;
+  width: 16px;
 }
 
 ::-webkit-scrollbar-track {
-  background: url("/assets/images/scrollbar-track.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  background: #2b0044; /* Dark purple from your theme */
 }
 
 ::-webkit-scrollbar-thumb {
-  border: none;
-  background: 
-    url("/assets/images/scroll bar/row-1-column-1.png") top center no-repeat,
-    url("/assets/images/scroll bar/row-3-column-1.png") bottom center no-repeat,
-    url("/assets/images/scroll bar/row-2-column-1.png") center repeat-y;
-  background-size: 
-    24px 24px,  /* top image */
-    24px 24px,  /* bottom image */
-    24px 24px;  /* middle image */
-  background-position: 
-    center top,
-    center bottom,
-    center center;
-  min-height: 20px; /* Minimum height to show all three parts */
+  background-color: #42006c; /* A mid-range purple */
+  border: 2px solid #32cd32; /* A nice terminal green for an accent */
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: 
-    url("/assets/images/scroll bar/row-1-column-1.png") top center no-repeat,
-    url("/assets/images/scroll bar/row-3-column-1.png") bottom center no-repeat,
-    url("/assets/images/scroll bar/row-2-column-1.png") center repeat-y;
-  background-size: 
-    24px 24px,
-    24px 24px,
-    24px 24px;
-  background-position: 
-    center top,
-    center bottom,
-    center center;
+  background-color: #694072; /* A lighter purple for hover */
+  border-color: #50e850; /* A lighter green for hover */
 }
 
 * {
