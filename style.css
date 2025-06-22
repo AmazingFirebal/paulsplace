@@ -19,7 +19,6 @@ html {
 ::-webkit-scrollbar-thumb {
   background-color: #42006c; /* A mid-range purple */
   border: 2px solid #32cd32; /* A nice terminal green for an accent */
-  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -421,7 +420,6 @@ a {
 
 .right-panel::-webkit-scrollbar-thumb {
   background: #42006c;
-  border-radius: 4px;
 }
 
 .right-panel::-webkit-scrollbar-thumb:hover {
