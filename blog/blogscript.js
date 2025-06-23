@@ -43,20 +43,30 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             const magazineData = await response.json();
 
-            // Combine cover and pages into one array for viewing
-            currentMagazinePages = [magazineData.cover, ...magazineData.pages];
-            modalTitle.textContent = magazineData.title || "Magazine Viewer";
+            // Extract data from your custom format
+            const title = magazineData.title;
+            const subHeading = magazineData["sub-heading"];
+            const content = magazineData.content;
 
-            // Show the first page (the cover) and the modal
-            showPage(0);
+            // Create HTML content to display in the modal
+            const magazineHTML = `
+                <h1>${title}</h1>
+                <h2>${subHeading}</h2>
+                <p>${content}</p>
+            `;
+
+            // Set the content as a single "page"
+            currentMagazinePages = [magazineHTML];
+            modalTitle.textContent = title || "Magazine Viewer";
+
+            // Display the content and show the modal
+            showPage(0); // Show the first (and only) page
             modal.style.display = 'flex';
 
         } catch (error) {
             console.error("Could not load magazine:", error);
             alert("Sorry, there was an error loading this magazine.");
         }
-    }
-
     // Function to close the modal
     function hideModal() {
         modal.style.display = 'none';
