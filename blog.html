@@ -83,9 +83,16 @@
     .modal-nav {
         display: flex;
         justify-content: space-between;
+        align-items: center; /* To vertically center the page indicator */
         padding: 10px;
         background-color: #c0c0c0;
         border-top: 2px solid #808080;
+    }
+
+    #page-indicator {
+        color: #000080;
+        font-family: 'IBM Plex Mono', monospace;
+        font-weight: bold;
     }
 
     .nav-btn {
@@ -141,10 +148,10 @@
             <div class="text-content">
                 <h1>Paul's Blog</h1>
                 <div class="magazine-grid">
-                    <div class="magazine-cover" data-img-src="assets/images/cover1.png">
+                    <div class="magazine-cover" data-json-src="https://raw.githubusercontent.com/AmazingFirebal/Blog-posts/main/magazine1.json">
                         <img src="assets/images/cover1.png" alt="Blog Cover 1">
                     </div>
-                    <div class="magazine-cover" data-img-src="assets/images/cover 2.png">
+                    <div class="magazine-cover" data-json-src="https://raw.githubusercontent.com/AmazingFirebal/Blog-posts/main/magazine2.json">
                         <img src="assets/images/cover 2.png" alt="Blog Cover 2">
                     </div>
                     <div class="magazine-cover">
@@ -156,7 +163,7 @@
                     <div class="magazine-cover">
                         <!-- Placeholder for future cover -->
                     </div>
-                    <div class="magazine-cover" data-img-src="assets/images/3d cover.png">
+                    <div class="magazine-cover" data-json-src="https://raw.githubusercontent.com/AmazingFirebal/Blog-posts/main/3d_magazine.json">
                         <img src="assets/images/3d cover.png" alt="3D Blog Cover">
                     </div>
                 </div>
@@ -181,6 +188,7 @@
             </div>
             <div class="modal-nav">
                 <button id="prev-btn" class="nav-btn">&lt; Prev</button>
+                <span id="page-indicator"></span>
                 <button id="next-btn" class="nav-btn">Next &gt;</button>
             </div>
         </div>
