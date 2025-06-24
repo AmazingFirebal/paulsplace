@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Get modal elements
     const modalCloseBtn = modal.querySelector('.modal-close-btn');
-    const modalImage = document.getElementById('magazine-image');
+    const pageContentContainer = document.getElementById('page-content-container');
     const modalTitle = modal.querySelector('.modal-title');
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
@@ -24,13 +24,71 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    /**
+     * Dynamically splits text content into pages and interleaves images.
+     * @param {string} textContent The full blog post content.
+     * @param {string[]} imageList An array of image URLs to scatter.
+     * @returns {string[]} An array of HTML strings, each representing a page.
+     */
+    function generatePages(textContent, imageList = []) {
+        const pages = [];
+        // Adjust this value based on your font size and desired page density.
+        const CHARS_PER_PAGE = 950;
+        const imagesToPlace = [...imageList];
+
+        let remainingText = textContent.trim();
+        let pageCount = 0;
+
+        while (remainingText.length > 0) {
+            pageCount++;
+            let pageText;
+            let splitPoint = -1;
+
+            if (remainingText.length <= CHARS_PER_PAGE) {
+                pageText = remainingText;
+                remainingText = "";
+            } else {
+                // Try to find a natural break point (end of paragraph or sentence)
+                // by searching backwards from the character limit.
+                for (let i = CHARS_PER_PAGE; i > 0; i--) {
+                    if (remainingText[i] === '\n' || remainingText[i] === '.') {
+                        splitPoint = i + 1;
+                        break;
+                    }
+                }
+                // If no natural break found, just cut at the limit.
+                if (splitPoint === -1) {
+                    splitPoint = CHARS_PER_PAGE;
+                }
+                pageText = remainingText.substring(0, splitPoint);
+                remainingText = remainingText.substring(splitPoint);
+            }
+
+            // Format the text and preserve line breaks from the JSON.
+            let pageHTML = `<div class="text-block"><p>${pageText.trim().replace(/\n/g, '<br><br>')}</p></div>`;
+
+            // Insert an image on every other page (page 2, 4, etc.), if available.
+            if (pageCount > 1 && pageCount % 2 === 0 && imagesToPlace.length > 0) {
+                const imageUrl = imagesToPlace.shift(); // Get and remove the next image
+                pageHTML += `<img src="${imageUrl}" alt="Blog post image" class="inline-blog-image">`;
+            }
+
+            pages.push(pageHTML);
+        }
+
+        // If there are leftover images, add them to their own pages at the end.
+        while (imagesToPlace.length > 0) {
+            const imageUrl = imagesToPlace.shift();
+            pages.push(`<img src="${imageUrl}" alt="Blog post image" class="inline-blog-image">`);
+        }
+
+        return pages;
+    }
+
     // Function to show a specific page
     function showPage(index) {
-        if (index < 0 || index >= currentMagazinePages.length) {
-            return;
-        }
-        currentPageIndex = index;
-        modalImage.src = currentMagazinePages[currentPageIndex];
+        currentPageIndex = (index + currentMagazinePages.length) % currentMagazinePages.length;
+        pageContentContainer.innerHTML = currentMagazinePages[currentPageIndex];
         updateControls();
     }
 
@@ -43,8 +101,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             const magazineData = await response.json();
 
-            // Combine cover and pages into one array for viewing
-            currentMagazinePages = [magazineData.cover, ...magazineData.pages];
+            // Generate pages dynamically from the 'content' and 'images' fields.
+            const contentPages = generatePages(magazineData.content || "", magazineData.images || []);
+
+            // The first page is always the cover image.
+            const coverPage = `<img id="magazine-image" src="${magazineData.cover}" alt="${magazineData.title || 'Cover'}">`;
+            currentMagazinePages = [coverPage, ...contentPages];
             modalTitle.textContent = magazineData.title || "Magazine Viewer";
 
             // Show the first page (the cover) and the modal
@@ -63,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Reset state
         currentMagazinePages = [];
         currentPageIndex = 0;
-        modalImage.src = ""; // Clear image
+        pageContentContainer.innerHTML = ""; // Clear content
         modalTitle.textContent = "Magazine Viewer"; // Reset title
     }
 
