@@ -52,6 +52,20 @@ html {
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'EagleSpCGAAlt2';
+  src: url('assets/fonts/Web437_EagleSpCGA_Alt2.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'EagleSpCGAAlt3';
+  src: url('assets/fonts/Web437_EagleSpCGA_Alt3.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'EagleSpCGAAlt3_2y';
+  src: url('assets/fonts/Web437_EagleSpCGA_Alt3-2y.woff') format('woff');
+}
 
 body {
   font-family: 'ibm_xga-ai', monospace;
