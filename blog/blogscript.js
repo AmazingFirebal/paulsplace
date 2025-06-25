@@ -88,26 +88,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function openMagazineFromIndex(i) {
-        const cover = entries[i];
-        const jsonURL = cover.getAttribute("data-json-src");
-        const baseName = jsonURL.split('/').pop().replace(/\.json$/, '');
-        const txtURL = `https://raw.githubusercontent.com/AmazingFirebal/Blog-posts/main/${baseName}.txt`;
-        currentCoverImg = `assets/images/${baseName}.png`;
+    const cover = entries[i];
+    const jsonURL = cover.getAttribute("data-json-src");
+    const baseName = jsonURL.split('/').pop().replace(/\.json$/, '');
+    const txtURL = `https://raw.githubusercontent.com/AmazingFirebal/Blog-posts/main/${baseName}.txt`;
 
-        fetch(txtURL)
-            .then(res => res.text())
-            .then(text => {
-                pages = parseTextToChunks(text);
-                currentPage = 0;
-                renderPage(currentPage);
-                modal.style.display = "flex";
-                entryIndex = i;
-            })
-            .catch(err => {
-                console.error("Failed to load blog:", err);
-                pageContainer.innerHTML = "<p>Error loading blog content.</p>";
-            });
-    }
+    // Get the image that was actually shown on the cover
+    const imgElement = cover.querySelector('img');
+    currentCoverImg = imgElement ? imgElement.src : '';
+
+    fetch(txtURL)
+        .then(res => res.text())
+        .then(text => {
+            pages = parseTextToChunks(text);
+            currentPage = 0;
+            renderPage(currentPage);
+            modal.style.display = "flex";
+            entryIndex = i;
+        })
+        .catch(err => {
+            console.error("Failed to load blog:", err);
+            pageContainer.innerHTML = "<p>Error loading blog content.</p>";
+        });
+}
+
 
     // Navigation buttons
     prevBtn.onclick = () => {
