@@ -1,18 +1,27 @@
 const API_KEY = "AIzaSyDicG28BjedTA44teSup3iX46dBU3znbm8";
-const UPLOADS_PLAYLIST_ID = "UU3RiE5W0M6m9AUIaiDgppjA"; // "UU" + channel ID without @
-
 const videosDiv = document.getElementById("videos");
 
-async function loadLatestVideos() {
+async function loadPaigeVideos() {
   try {
-    const res = await fetch(
-      `https://www.googleapis.com/youtube/v3/playlistItems?key=${API_KEY}&playlistId=${UPLOADS_PLAYLIST_ID}&part=snippet&maxResults=3`
-    );
-    const data = await res.json();
+    // Step 1: Search for the channel
+    const searchRes = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&type=channel&q=paigey4lifez&key=${API_KEY}`);
+    const searchData = await searchRes.json();
+
+    if (!searchData.items.length) {
+      videosDiv.innerHTML = "<p>Paige's channel not found.</p>";
+      return;
+    }
+
+    const channelId = searchData.items[0].snippet.channelId;
+    const uploadsPlaylistId = "UU" + channelId.substring(2); // Convert UCxxx -> UUxxx
+
+    // Step 2: Fetch videos from the uploads playlist
+    const playlistRes = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?key=${API_KEY}&playlistId=${uploadsPlaylistId}&part=snippet&maxResults=3`);
+    const playlistData = await playlistRes.json();
 
     videosDiv.innerHTML = "";
 
-    data.items.forEach((item) => {
+    playlistData.items.forEach((item) => {
       const videoId = item.snippet.resourceId.videoId;
       const iframe = document.createElement("iframe");
       iframe.src = `https://www.youtube.com/embed/${videoId}`;
@@ -24,9 +33,9 @@ async function loadLatestVideos() {
       videosDiv.appendChild(iframe);
     });
   } catch (err) {
-    videosDiv.innerHTML = "<p>Could not load videos right now.</p>";
-    console.error("YouTube API error:", err);
+    videosDiv.innerHTML = "<p>Error loading videos.</p>";
+    console.error("Error fetching YouTube videos:", err);
   }
 }
 
-loadLatestVideos();
+loadPaigeVideos();

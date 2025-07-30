@@ -38,7 +38,7 @@ body, html {
 }
 
 .left-panel {
-  width: 60%;
+  width: 70%;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -47,23 +47,36 @@ body, html {
   margin-bottom: 20px;
 }
 
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
 .social-links a {
-  display: block;
-  margin-bottom: 10px;
-  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 6px;
   text-decoration: none;
-  font-size: 1.1em;
-  transition: opacity 0.2s ease;
+  font-weight: bold;
+  font-size: 0.95em;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
 .social-links a:hover {
-  opacity: 0.7;
+  transform: scale(1.05);
+  opacity: 0.85;
 }
 
-.pink { color: var(--pink); }
-.orange { color: var(--orange); }
-.teal { color: var(--teal); }
-.blue { color: var(--blue); }
+
+.pink { color: #ff82c3; }
+.orange { color: #ff9a3c; }
+.teal { color: #36cfcf; }
+.blue { color: #8ed6ff; }
+.purple { color: #d59aff; }
+.violet { color: #a78bfa; }
+
 
 .video-box {
   margin-top: 20px;
@@ -76,10 +89,12 @@ body, html {
 }
 
 .right-panel {
-  width: 40%;
-  background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
+  width: 30%; 
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border-left: 1px solid rgba(255, 255, 255, 0.1); 
 }
+
 
 .right-panel h2 {
   margin-bottom: 10px;
@@ -126,37 +141,5 @@ body, html {
   .left-panel, .right-panel {
     width: 100%;
     height: 50%;
-  }
-}
-.main-scroll-wrapper {
-  height: calc(100% - 60px); /* leave space for music player */
-  overflow: hidden;
-}
-
-.main-layout {
-  display: flex;
-  height: 100%;
-  width: 100%;
-}
-
-/* Only on mobile */
-@media (max-width: 768px) {
-  .main-scroll-wrapper {
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .main-layout {
-    width: 200%; /* 2x screen width */
-    flex-wrap: nowrap;
-  }
-
-  .left-panel,
-  .right-panel {
-    width: 100%;
-    flex-shrink: 0;
-    height: 100%;
-    overflow-y: auto;
   }
 }
