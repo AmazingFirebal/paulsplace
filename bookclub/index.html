@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Paige's Page</title>
+  <link rel="icon" type="image/png" href="assets/images/image1.png">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -33,20 +34,125 @@
 
     <div class="right-panel">
             <div class="blog-section">
-        <h2>What I’ve been up to</h2>
-        <p>Not complete</p>
-        
-        <div class="blog-carousel-container">
-          <div class="blog-carousel" id="blog-carousel">
-            <div class="blog-card">Post 1</div>
-            <div class="blog-card">Post 2</div>
-            <div class="blog-card">Post 3</div>
-          </div>
-        
-          <div class="scroll-buttons">
-            <button onclick="scrollBlog(-1)">&#x25C0;</button>
-            <button onclick="scrollBlog(1)">&#x25B6;</button>
-          </div>
+
+<style>
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 1rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .card {
+    flex: 0 0 90%;
+    max-width: 600px;
+    scroll-snap-align: start;
+    background: #222;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-sizing: border-box;
+    margin: auto;
+  }
+
+  img, iframe {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    max-height: 60vh;
+    object-fit: contain;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 600px) {
+    .card {
+      flex: 0 0 95%;
+      padding: 0.75rem;
+    }
+
+    img, iframe {
+      max-height: 50vh;
+    }
+  }
+</style>
+
+
+  <script>
+  const sheetURL = 'https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLjT3LoE9SZL2XtFByaKXGBoea_l-0lmDP8n22GEePCyWrrg8X2DJkaYnh0_1B6P99YkG03Rl-wYwykBI9BCcB7263z8fH9ni6e5CehqeGGhGKDdSaIFahW8yryfWqAKnoqRNpq_ly3F95YLWKLpYXBfztJb17yvGcW6VZR3Lit4Z_GX0A70MiYAfN4XV_PJG1Xc019fYz1x1gxi3WnMgZ2dPv4pJZqzPeuv8m584_7q454qLV6ykNTr_V4pO1jv6gLcBqFHzHj7TD29khbQxhx53ftbZg&lib=MxZwZMYfQ7583d_jaz3St0LvxbzDu_lgW';
+
+  fetch(sheetURL)
+    .then(res => res.json())
+    .then(data => {
+      const container = document.getElementById('carousel');
+      data.reverse().forEach(entry => {
+        const card = document.createElement('div');
+        card.className = 'card';
+
+        if (entry["Image URL"]) {
+          const img = document.createElement('img');
+          img.src = toDriveThumbnailURL(entry["Image URL"]);
+          img.alt = "Uploaded image";
+          card.appendChild(img);
+        }
+        if (entry["Video URL"]) {
+          const iframe = document.createElement('iframe');
+          iframe.src = toDrivePreviewURL(entry["Video URL"]);
+          iframe.width = "100%";
+          iframe.height = "300";
+          iframe.allow = "autoplay";
+          iframe.loading = "lazy";
+          iframe.style.border = "none";
+          card.appendChild(iframe);
+        }
+
+        if (entry["Text"]) {
+          const p = document.createElement('p');
+          p.textContent = entry["Text"];
+          card.appendChild(p);
+        }
+
+        container.appendChild(card);
+      });
+    })
+    .catch(err => {
+      console.error('Error fetching data:', err);
+    });
+
+  function extractDriveId(url) {
+    const match = url.match(/\/d\/([a-zA-Z0-9_-]+)\//);
+    if (match && match[1]) return match[1];
+
+    const idFromOpen = url.match(/id=([a-zA-Z0-9_-]+)/);
+    if (idFromOpen && idFromOpen[1]) return idFromOpen[1];
+
+    return null;
+  }
+
+  function toDriveThumbnailURL(url) {
+    const id = extractDriveId(url);
+    return id ? `https://drive.google.com/thumbnail?id=${id}&sz=s4000` : url;
+  }
+
+  function toDrivePreviewURL(url) {
+    const id = extractDriveId(url);
+    return id ? `https://drive.google.com/file/d/${id}/preview` : url;
+  }
+</script>
+
+
+
+
+  <h1 style="text-align:center;">What I've been up to</h1>
+  <div class="carousel" id="carousel"></div>
+
+
+
         </div>
         </div>
         </div>

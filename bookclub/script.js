@@ -37,14 +37,3 @@ async function loadPaigeVideos() {
     console.error("Error fetching YouTube videos:", err);
   }
 }
-function scrollBlog(direction) {
-  const carousel = document.getElementById("blog-carousel");
-  const scrollAmount = 260; // Adjust based on card width + gap
-
-  carousel.scrollBy({
-    left: direction * scrollAmount,
-    behavior: "smooth",
-  });
-}
-
-loadPaigeVideos();
