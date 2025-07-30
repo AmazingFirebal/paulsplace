@@ -4,7 +4,7 @@ const videosDiv = document.getElementById("videos");
 async function loadPaigeVideos() {
   try {
     // Step 1: Search for the channel
-    const searchRes = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&type=channel&q=paigey4lifez&key=${API_KEY}`);
+    const searchRes = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&type=channel&q=paigey4lifez&key=AIzaSyDicG28BjedTA44teSup3iX46dBU3znbm8`);
     const searchData = await searchRes.json();
 
     if (!searchData.items.length) {
@@ -16,7 +16,7 @@ async function loadPaigeVideos() {
     const uploadsPlaylistId = "UU" + channelId.substring(2); // Convert UCxxx -> UUxxx
 
     // Step 2: Fetch videos from the uploads playlist
-    const playlistRes = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?key=${API_KEY}&playlistId=${uploadsPlaylistId}&part=snippet&maxResults=3`);
+    const playlistRes = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?key=AIzaSyDicG28BjedTA44teSup3iX46dBU3znbm8&playlistId=${uploadsPlaylistId}&part=snippet&maxResults=3`);
     const playlistData = await playlistRes.json();
 
     videosDiv.innerHTML = "";
