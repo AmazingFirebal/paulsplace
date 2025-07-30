@@ -38,7 +38,7 @@ body, html {
 }
 
 .left-panel {
-  width: 70%;
+  width: 60%;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -76,12 +76,10 @@ body, html {
 }
 
 .right-panel {
-  width: 30%; 
-  background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(10px);
-  border-left: 1px solid rgba(255, 255, 255, 0.1); 
+  width: 40%;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
 }
-
 
 .right-panel h2 {
   margin-bottom: 10px;
