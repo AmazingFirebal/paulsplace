@@ -25,8 +25,8 @@ async function loadPaigeVideos() {
       const videoId = item.snippet.resourceId.videoId;
       const iframe = document.createElement("iframe");
       iframe.src = `https://www.youtube.com/embed/${videoId}`;
-      iframe.width = "100%";
-      iframe.height = "200";
+      iframe.width = "50%";
+      iframe.height = "400";
       iframe.frameBorder = "0";
       iframe.allowFullscreen = true;
       iframe.style.marginBottom = "15px";
@@ -36,6 +36,15 @@ async function loadPaigeVideos() {
     videosDiv.innerHTML = "<p>Error loading videos.</p>";
     console.error("Error fetching YouTube videos:", err);
   }
+}
+function scrollBlog(direction) {
+  const carousel = document.getElementById("blog-carousel");
+  const scrollAmount = 260; // Adjust based on card width + gap
+
+  carousel.scrollBy({
+    left: direction * scrollAmount,
+    behavior: "smooth",
+  });
 }
 
 loadPaigeVideos();
