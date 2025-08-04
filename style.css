@@ -13,17 +13,17 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #2b0044; /* Dark purple from your theme */
+  background: #2b0044; 
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #42006c; /* A mid-range purple */
-  border: 2px solid #32cd32; /* A nice terminal green for an accent */
+  background-color: #42006c; 
+  border: 2px solid #32cd32;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #694072; /* A lighter purple for hover */
-  border-color: #50e850; /* A lighter green for hover */
+  background-color: #694072;
+  border-color: #50e850; 
 }
 
 * {
@@ -67,6 +67,7 @@ html {
   src: url('assets/fonts/Web437_EagleSpCGA_Alt3-2y.woff') format('woff');
 }
 
+
 body {
   font-family: 'ibm_xga-ai', monospace;
   background-color: #0b0014;
@@ -75,9 +76,12 @@ body {
   height: 100%;
 }
   
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
   font-family: 'ibm_cga_thin', 'ibm_ps-55_re', monospace;
   margin-bottom: 20px;
+}
+h1 {
+	font-family: 'EagleSpCGAAlt2'
 }
 
 /* Sidebar (taskbar) */
@@ -557,7 +561,7 @@ a {
   padding-bottom: 30px;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  align-items: flex-end; /* Align magazines to bottom */
+  align-items: flex-end; 
 }
 
 .blog-posts::-webkit-scrollbar {
@@ -565,7 +569,7 @@ a {
 }
 
 .blog-post {
-  flex: 0 0 350px; /* Wider magazines */
+  flex: 0 0 350px; 
   background: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   overflow: hidden;
