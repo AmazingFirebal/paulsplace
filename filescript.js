@@ -1,4 +1,4 @@
-const token = "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";
+const token = "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";
 const username = "AmazingFirebal";
 const repo = "Images";
 const branch = "main";
