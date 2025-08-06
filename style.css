@@ -800,3 +800,55 @@ a {
   padding: 5px;
   background: #fff;
 }
+.photo-tabs {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.photo-tab {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.photo-tab img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 4px;
+}
+
+.photo-tab span {
+  font-size: 12px;
+}
+
+.photo-panel {
+  display: none;
+  width: 100%;
+  background: #1a001f;
+  padding: 10px;
+  box-shadow: inset 0 0 4px #000;
+  overflow-x: auto;
+}
+
+.photo-panel.active {
+  display: block;
+}
+
+.photo-strip {
+  display: flex;
+  gap: 10px;
+}
+
+.photo-strip img {
+  max-height: 200px;
+  border: 2px solid #5a0099;
+}
+

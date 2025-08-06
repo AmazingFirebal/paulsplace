@@ -80,3 +80,17 @@ async function loadBlogPosts() {
         console.error('Error loading blog posts:', error);
     }
 }
+
+document.querySelectorAll('.photo-tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Hide all panels
+    document.querySelectorAll('.photo-panel').forEach(panel => panel.classList.remove('active'));
+
+    // Show the target
+    const targetId = btn.getAttribute('data-target');
+    const targetPanel = document.getElementById(targetId);
+    if (targetPanel) {
+      targetPanel.classList.add('active');
+    }
+  });
+});
