@@ -344,77 +344,11 @@ a {
 .text-content {
   flex: 1;
   min-width: 0;
-}
-
-.right-panel {
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 400px;
-  height: 100vh;
   background-color: rgba(30, 0, 51, 0.5);
   border-left: 2px solid #42006c;
   padding: 20px;
   overflow: hidden;
   transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.right-panel.hidden {
-  transform: translateX(100%);
-  opacity: 0;
-}
-
-.panel-content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  height: 100%;
-}
-
-.panel-image {
-  flex: 0 0 auto;
-  width: 100%;
-}
-
-.panel-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(201, 160, 255, 0.2);
-}
-
-.panel-text {
-  font-size: 14px;
-  line-height: 1.6;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.panel-text h2 {
-  font-size: 1.4em;
-  color: #ffccff;
-  margin: 0;
-}
-
-.panel-text h3 {
-  font-size: 1.2em;
-  color: #ffccff;
-  margin: 0;
-}
-
-.panel-text p {
-  margin: 0;
-}
-
-.panel-text ul {
-  margin: 0 0 0 20px;
-  padding: 0;
-}
-
-.panel-text li {
-  margin: 0 0 8px 0;
 }
 
 .status-section {
@@ -538,20 +472,6 @@ a {
   color: #c9a0ff;
   text-align: center;
   font-family: 'ibm_xga-ai', monospace;
-}
-
-/* Magazine Blog Styles */
-.blog-section {
-  position: fixed;
-  bottom: 64px; /* Increased shelf height */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1000px; /* Increased width for bigger shelf */
-  height: 500px; /* Increased height for bigger magazines */
-  z-index: 100;
-  display: flex;
-  gap: 30px;
-  padding: 0 30px;
 }
 
 .blog-posts {
@@ -714,7 +634,7 @@ a {
   position: relative;
   margin: 0 auto;
   display: block;
-  pointer-events: none; /* This prevents any hover interactions */
+  pointer-events: none;
 }
 
 /* Blog page specific styles */
