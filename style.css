@@ -229,12 +229,12 @@ li {
 details {
   margin-bottom: 30px;
 }
-
+/* TIDY THIS */
 .web-content {
   display: flex;
   gap: 40px;
   padding: 40px;
-  margin-left: 64px; /* so it doesn't get hidden under the sidebar */
+  margin-left: 64px;
   flex-wrap: wrap;
 }
 
@@ -244,19 +244,20 @@ details {
   gap: 40px;
   margin-left: 64px; 
   padding: 40px;
-  min-height: calc(100vh - 80px); /* Full viewport height minus padding */
+  min-height: calc(100vh - 80px);
 }
 
 .web-column {
-  background-color: #1a001f;
+  background-color: rgba(30, 0, 51, 0.5);
   border: 2px solid #42006c;
   padding: 20px;
   border-radius: 10px;
   flex: 1;
   min-width: 250px;
-  height: calc(100vh - 160px); /* Full height minus padding and margins */
+  height: calc(100vh - 160px);
   overflow-y: auto;
 }
+/* TIDY THIS END */
 
 .section-title {
   font-family: 'ibm_cga_thin', monospace;
@@ -361,7 +362,6 @@ a {
   margin: 0 0 8px 0;
 }
 
-/* Add custom scrollbar for the right panel */
 .right-panel::-webkit-scrollbar {
   width: 8px;
 }
