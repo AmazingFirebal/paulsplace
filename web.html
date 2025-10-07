@@ -84,7 +84,7 @@
       });
       
       if (response.ok) {
-        // Show success message
+        //success message
         form.reset();
         successMessage.style.display = "block";
         setTimeout(() => {
@@ -96,8 +96,6 @@
     } catch (error) {
       alert("Oops! There was a problem submitting your form. Please try again.");
     }
-
-    // Reset button state
     button.textContent = originalText;
     button.disabled = false;
   }

@@ -1,3 +1,4 @@
+//disk animation 
 document.addEventListener('DOMContentLoaded', () => {
 const disk = document.querySelector('.disk');
 let lastScrollTop = 0;
@@ -17,6 +18,7 @@ function animate() {
 if (disk) animate();
 });
 
+//parallax background
 document.addEventListener('mousemove', (e) => {
   const backgrounds = document.querySelectorAll('.parallax-background');
   
@@ -83,10 +85,7 @@ async function loadBlogPosts() {
 
 document.querySelectorAll('.photo-tab').forEach(btn => {
   btn.addEventListener('click', () => {
-    // Hide all panels
     document.querySelectorAll('.photo-panel').forEach(panel => panel.classList.remove('active'));
-
-    // Show the target
     const targetId = btn.getAttribute('data-target');
     const targetPanel = document.getElementById(targetId);
     if (targetPanel) {
