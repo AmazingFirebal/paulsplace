@@ -718,7 +718,7 @@ a {
 @media screen and (max-aspect-ratio: 1/1) {
   .taskbar {
     width: 100%;
-    height: 64px;
+    height: 128px;
     flex-direction: row;
     justify-content: flex-start;
     padding-top: 0;
